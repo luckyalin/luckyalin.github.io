@@ -192,7 +192,7 @@
                         <li><a href="index.html">首页</a></li>
                         <li><a href="features.html">系统功能</a></li>
                         <li class="active"><a href="solutions.html">解决方案</a></li>
-                        <li><a href="cases.html">成功案例</a></li>
+                        <li><a href="index.html#cases">成功案例</a></li>
                         <li><a href="about.html">关于我们</a></li>
                     </ul>
                 </nav>
@@ -587,6 +587,25 @@
                     }
                 });
             });
+
+            // 处理从其他页面跳转到锚点的情况
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+
+                    // 延迟执行滚动，确保页面完全加载
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
         });
     </script>
 </body>
