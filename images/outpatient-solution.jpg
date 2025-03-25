@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#f0f2f5"/>
+  <rect x="0" y="0" width="800" height="450" fill="#edf1f7"/>
+  <g fill="#0066cc" fill-opacity="0.1">
+    <path d="M0,450 L800,0 L800,450 Z"/>
+  </g>
+  <g fill="#39b54a" fill-opacity="0.1">
+    <path d="M0,0 L800,450 L0,450 Z"/>
+  </g>
+  <g transform="translate(400, 225)">
+    <circle fill="#0066cc" opacity="0.2" cx="0" cy="0" r="80"/>
+    <path fill="#39b54a" opacity="0.2" d="M40,-40 C60,-20 60,20 40,40 C20,60 -20,60 -40,40 C-60,20 -60,-20 -40,-40 C-20,-60 20,-60 40,-40 Z"/>
+    <text font-family="Arial" font-size="24" fill="#555555" text-anchor="middle" x="0" y="10">临床营养管理系统</text>
+  </g>
+</svg> 

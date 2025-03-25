@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60">
+  <style>
+    .logo-text { font-family: 'Arial', sans-serif; font-weight: bold; }
+    .blue { fill: #0066cc; }
+    .green { fill: #39b54a; }
+  </style>
+  
+  <!-- 营养标志 -->
+  <g transform="translate(10, 10)">
+    <circle class="blue" cx="20" cy="20" r="20" opacity="0.9"/>
+    
+    <!-- 叶子图案 -->
+    <path class="green" d="M28,12 C32,16 34,22 30,28 C26,34 20,32 16,28 C12,24 12,18 16,14 C20,10 24,8 28,12 Z" />
+    
+    <!-- 叶脉 -->
+    <path fill="none" stroke="#ffffff" stroke-width="1.5" d="M23,15 C25,19 25,23 23,27 M18,17 C20,20 20,23 18,25" />
+  </g>
+  
+  <!-- Logo文字 -->
+  <text x="60" y="30" class="logo-text blue" font-size="18">临床营养</text>
+  <text x="60" y="48" class="logo-text blue" font-size="18">管理系统</text>
+</svg> 

@@ -1,0 +1,257 @@
+/* 
+ * 临床营养管理系统官网
+ * 响应式样式表
+ */
+
+/* 大屏幕设备 (1200px 以下) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .feature-card {
+        padding: 25px;
+    }
+    
+    .solution-content {
+        padding: 30px;
+    }
+    
+    .contact-content,
+    .contact-form {
+        padding: 40px;
+    }
+}
+
+/* 中等屏幕设备 (992px 以下) */
+@media (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .hero-banner {
+        padding: 60px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .hero-content h2 {
+        font-size: 22px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    .footer-top {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-info {
+        flex: 0 0 100%;
+    }
+    
+    .footer-links {
+        flex: 0 0 100%;
+    }
+}
+
+/* 平板设备 (768px 以下) */
+@media (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    .nav-menu,
+    .nav-buttons {
+        display: none;
+    }
+    
+    .mobile-toggle {
+        display: flex;
+    }
+    
+    .mobile-menu-active .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+    
+    .mobile-menu-active .nav-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px 20px;
+        background-color: var(--white);
+    }
+    
+    .mobile-menu-active .nav-buttons .btn {
+        margin-top: 10px;
+    }
+    
+    .hero-banner .container {
+        flex-direction: column;
+    }
+    
+    .hero-content,
+    .hero-image {
+        flex: 0 0 100%;
+    }
+    
+    .hero-image {
+        margin-top: 30px;
+    }
+    
+    .solution-item,
+    .solution-item.reverse {
+        flex-direction: column;
+    }
+    
+    .solution-content,
+    .solution-image {
+        flex: 0 0 100%;
+    }
+    
+    .solution-image {
+        height: 300px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .footer-nav {
+        justify-content: center;
+    }
+}
+
+/* 手机设备 (576px 以下) */
+@media (max-width: 575px) {
+    .hero-content h1 {
+        font-size: 30px;
+    }
+    
+    .hero-content h2 {
+        font-size: 20px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 16px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contact-content,
+    .contact-form {
+        padding: 30px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* 小手机设备 (375px 以下) */
+@media (max-width: 375px) {
+    .hero-content h1 {
+        font-size: 26px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .contact-content h2 {
+        font-size: 24px;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .header,
+    .footer,
+    .back-to-top,
+    .contact-section,
+    .nav-buttons,
+    .mobile-toggle {
+        display: none;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .hero-banner,
+    .features-section,
+    .solutions-section,
+    .cases-section {
+        padding: 20px 0;
+        page-break-inside: avoid;
+    }
+    
+    .hero-banner {
+        background: none;
+    }
+    
+    a {
+        color: black;
+    }
+    
+    .logo a {
+        color: black;
+    }
+} 
