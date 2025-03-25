@@ -8,6 +8,672 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- 引入字体图标 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #1cc88a;
+            --accent-color: #36b9cc;
+            --dark-color: #2e384d;
+            --light-color: #f8f9fc;
+            --gray-color: #858796;
+            --light-gray: #eaecf4;
+            --font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3a5bc7;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #17a673;
+            color: white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-5 {
+            margin-bottom: 3rem;
+        }
+        
+        .my-4 {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* 导航栏样式 */
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background-color: rgba(78, 115, 223, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .nav-action {
+            display: flex;
+            gap: 10px;
+        }
+        
+        /* Banner样式 */
+        .hero-banner {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, #4e73df 0%, #36b9cc 100%);
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* 特点部分样式 */
+        .features-section {
+            background-color: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* 解决方案部分样式 */
+        .solutions-section {
+            background-color: var(--light-color);
+        }
+        
+        .solutions-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .solution-item {
+            display: flex;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .solution-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .solution-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .solution-image {
+            flex: 1;
+            min-height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .solution-content {
+            flex: 1;
+            padding: 40px;
+        }
+        
+        .solution-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .solution-features {
+            margin: 20px 0;
+        }
+        
+        .solution-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .solution-features li i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        /* 案例研究部分样式 */
+        .cases-section {
+            background-color: white;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .case-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: white;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .case-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .case-content {
+            padding: 25px;
+        }
+        
+        .case-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .case-content p {
+            color: var(--gray-color);
+            margin-bottom: 15px;
+        }
+        
+        /* 统计部分样式 */
+        .stats-section {
+            background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+            color: white;
+            padding: 70px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px 20px;
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .stat-card h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+        
+        /* 联系部分样式 */
+        .contact-section {
+            background-color: var(--light-color);
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .contact-content {
+            padding: 50px;
+            background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+            color: white;
+        }
+        
+        .contact-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            margin-top: 40px;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info li i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            padding: 50px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        /* 页脚样式 */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 70px 0 20px;
+        }
+        
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-info p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .link-group h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .link-group ul li {
+            margin-bottom: 10px;
+        }
+        
+        .link-group ul li a {
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .link-group ul li a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .copyright p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .footer-nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-nav a {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-nav a:hover {
+            opacity: 1;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background-color: #3a5bc7;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .solution-item, .solution-item:nth-child(even) {
+                flex-direction: column;
+            }
+            
+            .solution-image {
+                min-height: 200px;
+            }
+            
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .copyright {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 顶部导航栏 -->
@@ -16,7 +682,6 @@
             <div class="header-wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="临床营养管理系统" id="logo-img">
                         <span>临床营养管理系统</span>
                     </a>
                 </div>
@@ -48,17 +713,23 @@
     <!-- 主横幅 -->
     <section class="hero-banner">
         <div class="container">
-            <div class="hero-content">
-                <h1>智能临床营养管理系统</h1>
-                <h2>提升医院营养管理的专业智能解决方案</h2>
-                <p>整合营养评估、膳食干预、监测随访的全流程管理，为患者提供科学、精准的个性化营养服务</p>
-                <div class="hero-buttons">
-                    <a href="demo.html" class="btn btn-primary">免费演示</a>
-                    <a href="contact.html" class="btn btn-secondary">咨询方案</a>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="hero-content">
+                        <h1>智能临床营养管理系统</h1>
+                        <h2>提升医院营养管理的专业智能解决方案</h2>
+                        <p>整合营养评估、膳食干预、监测随访的全流程管理，为患者提供科学、精准的个性化营养服务</p>
+                        <div class="hero-buttons">
+                            <a href="demo.html" class="btn btn-primary">免费演示</a>
+                            <a href="contact.html" class="btn btn-secondary">咨询方案</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/hero-image.png" alt="临床营养管理系统界面展示">
+                <div class="col-md-6">
+                    <div class="hero-image">
+                        <img src="images/hero-image.png" alt="临床营养管理系统界面展示">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -66,7 +737,7 @@
     <!-- 系统特点 -->
     <section class="features-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header text-center">
                 <h2>系统核心优势</h2>
                 <p>专为医院营养科打造的全流程营养管理解决方案</p>
             </div>
@@ -126,7 +797,7 @@
     <!-- 解决方案 -->
     <section class="solutions-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header text-center">
                 <h2>专业解决方案</h2>
                 <p>覆盖医院营养管理全场景需求</p>
             </div>
@@ -135,14 +806,14 @@
                 <div class="solution-item">
                     <div class="solution-content">
                         <h3>住院患者营养管理</h3>
-                        <ul>
-                            <li>入院营养筛查与评估</li>
-                            <li>住院期间营养干预</li>
-                            <li>特殊疾病营养治疗</li>
-                            <li>营养支持实施监测</li>
-                            <li>出院营养指导</li>
+                        <ul class="solution-features">
+                            <li><i class="bi bi-check-circle"></i> 入院营养筛查与评估</li>
+                            <li><i class="bi bi-check-circle"></i> 住院期间营养干预</li>
+                            <li><i class="bi bi-check-circle"></i> 特殊疾病营养治疗</li>
+                            <li><i class="bi bi-check-circle"></i> 营养支持实施监测</li>
+                            <li><i class="bi bi-check-circle"></i> 出院营养指导</li>
                         </ul>
-                        <a href="solutions.html#inpatient" class="btn btn-text">了解更多 <i class="bi bi-arrow-right"></i></a>
+                        <a href="solutions.html#inpatient" class="btn btn-outline">了解更多 <i class="bi bi-arrow-right"></i></a>
                     </div>
                     <div class="solution-image">
                         <img src="images/inpatient-solution.jpg" alt="住院患者营养管理">
@@ -152,14 +823,14 @@
                 <div class="solution-item reverse">
                     <div class="solution-content">
                         <h3>门诊营养咨询管理</h3>
-                        <ul>
-                            <li>门诊患者营养评估</li>
-                            <li>慢病营养干预管理</li>
-                            <li>营养咨询记录管理</li>
-                            <li>随访提醒与管理</li>
-                            <li>电子营养处方</li>
+                        <ul class="solution-features">
+                            <li><i class="bi bi-check-circle"></i> 门诊患者营养评估</li>
+                            <li><i class="bi bi-check-circle"></i> 慢病营养干预管理</li>
+                            <li><i class="bi bi-check-circle"></i> 营养咨询记录管理</li>
+                            <li><i class="bi bi-check-circle"></i> 随访提醒与管理</li>
+                            <li><i class="bi bi-check-circle"></i> 电子营养处方</li>
                         </ul>
-                        <a href="solutions.html#outpatient" class="btn btn-text">了解更多 <i class="bi bi-arrow-right"></i></a>
+                        <a href="solutions.html#outpatient" class="btn btn-outline">了解更多 <i class="bi bi-arrow-right"></i></a>
                     </div>
                     <div class="solution-image">
                         <img src="images/outpatient-solution.jpg" alt="门诊营养咨询管理">
@@ -169,14 +840,14 @@
                 <div class="solution-item">
                     <div class="solution-content">
                         <h3>医院膳食管理</h3>
-                        <ul>
-                            <li>膳食营养配餐管理</li>
-                            <li>治疗膳食设计</li>
-                            <li>食谱库管理</li>
-                            <li>膳食成本核算</li>
-                            <li>食材供应链管理</li>
+                        <ul class="solution-features">
+                            <li><i class="bi bi-check-circle"></i> 膳食营养配餐管理</li>
+                            <li><i class="bi bi-check-circle"></i> 治疗膳食设计</li>
+                            <li><i class="bi bi-check-circle"></i> 食谱库管理</li>
+                            <li><i class="bi bi-check-circle"></i> 膳食成本核算</li>
+                            <li><i class="bi bi-check-circle"></i> 食材供应链管理</li>
                         </ul>
-                        <a href="solutions.html#dietary" class="btn btn-text">了解更多 <i class="bi bi-arrow-right"></i></a>
+                        <a href="solutions.html#dietary" class="btn btn-outline">了解更多 <i class="bi bi-arrow-right"></i></a>
                     </div>
                     <div class="solution-image">
                         <img src="images/dietary-solution.jpg" alt="医院膳食管理">
@@ -189,13 +860,13 @@
     <!-- 客户案例 -->
     <section class="cases-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header text-center">
                 <h2>成功案例</h2>
                 <p>已服务全国超过200家医疗机构</p>
             </div>
             
-            <div class="cases-carousel">
-                <div class="case-item">
+            <div class="cases-grid">
+                <div class="case-card">
                     <div class="case-image">
                         <img src="images/hospital-1.jpg" alt="某三甲医院案例">
                     </div>
@@ -206,7 +877,7 @@
                     </div>
                 </div>
                 
-                <div class="case-item">
+                <div class="case-card">
                     <div class="case-image">
                         <img src="images/hospital-2.jpg" alt="某肿瘤专科医院案例">
                     </div>
@@ -217,7 +888,7 @@
                     </div>
                 </div>
                 
-                <div class="case-item">
+                <div class="case-card">
                     <div class="case-image">
                         <img src="images/hospital-3.jpg" alt="某医院集团案例">
                     </div>
@@ -235,22 +906,34 @@
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="bi bi-hospital"></i>
+                    </div>
                     <h3><span class="counter">200</span>+</h3>
                     <p>合作医院</p>
                 </div>
                 
-                <div class="stat-item">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
                     <h3><span class="counter">500</span>万+</h3>
                     <p>管理患者数</p>
                 </div>
                 
-                <div class="stat-item">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                    </div>
                     <h3><span class="counter">98</span>%</h3>
                     <p>客户满意度</p>
                 </div>
                 
-                <div class="stat-item">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
                     <h3><span class="counter">50</span>%+</h3>
                     <p>工作效率提升</p>
                 </div>
@@ -304,8 +987,7 @@
             <div class="footer-top">
                 <div class="footer-info">
                     <div class="footer-logo">
-                        <img src="images/logo.png" alt="临床营养管理系统">
-                        <span>临床营养管理系统</span>
+                        <span>营养管理</span>
                     </div>
                     <p>专业医院营养管理信息化解决方案提供商</p>
                     <div class="social-links">
@@ -368,5 +1050,66 @@
     
     <!-- JavaScript 文件 -->
     <script src="js/main.js"></script>
+    <script>
+        // 返回顶部按钮功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 数字计数动画
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.textContent;
+                    let count = 0;
+                    const increment = target / speed;
+                    
+                    const updateCount = () => {
+                        if (count < target) {
+                            count += increment;
+                            counter.textContent = Math.ceil(count);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+                    
+                    updateCount();
+                });
+            }
+            
+            // 监听滚动到统计部分时触发动画
+            const statsSection = document.querySelector('.stats-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+    </script>
 </body>
 </html> 
