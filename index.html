@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,60 +21,65 @@
             --light-gray: #eaecf4;
             --font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: var(--font-family);
             line-height: 1.6;
             color: #333;
             background-color: var(--light-color);
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
-        
+
         img {
             max-width: 100%;
             height: auto;
         }
-        
+
         ul {
             list-style: none;
         }
-        
+
         a {
             text-decoration: none;
             color: inherit;
             transition: color 0.3s;
         }
-        
+
         a:hover {
             color: var(--primary-color);
         }
-        
+
         section {
             padding: 80px 0;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1rem;
         }
-        
+
         p {
             margin-bottom: 1rem;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 10px 24px;
@@ -84,56 +90,56 @@
             transition: all 0.3s ease;
             border: none;
         }
-        
+
         .btn-primary {
             background-color: var(--primary-color);
             color: white;
         }
-        
+
         .btn-primary:hover {
             background-color: #3a5bc7;
             color: white;
         }
-        
+
         .btn-secondary {
             background-color: var(--secondary-color);
             color: white;
         }
-        
+
         .btn-secondary:hover {
             background-color: #17a673;
             color: white;
         }
-        
+
         .btn-outline {
             background-color: transparent;
             border: 2px solid var(--primary-color);
             color: var(--primary-color);
         }
-        
+
         .btn-outline:hover {
             background-color: var(--primary-color);
             color: white;
         }
-        
+
         .btn-block {
             display: block;
             width: 100%;
         }
-        
+
         .text-center {
             text-align: center;
         }
-        
+
         .mb-5 {
             margin-bottom: 3rem;
         }
-        
+
         .my-4 {
             margin-top: 1.5rem;
             margin-bottom: 1.5rem;
         }
-        
+
         /* 导航栏样式 */
         .header {
             background-color: white;
@@ -144,51 +150,52 @@
             top: 0;
             z-index: 1000;
         }
-        
+
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
         }
-        
+
         .logo img {
             height: 40px;
             margin-right: 10px;
         }
-        
+
         .logo span {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color);
         }
-        
+
         .nav-links {
             display: flex;
             gap: 20px;
         }
-        
+
         .nav-links a {
             font-weight: 600;
             padding: 5px 10px;
             border-radius: 4px;
             transition: all 0.3s;
         }
-        
-        .nav-links a:hover, .nav-links a.active {
+
+        .nav-links a:hover,
+        .nav-links a.active {
             background-color: rgba(78, 115, 223, 0.1);
             color: var(--primary-color);
         }
-        
+
         .nav-action {
             display: flex;
             gap: 10px;
         }
-        
+
         /* Banner样式 */
         .hero-banner {
             padding: 160px 0 80px;
@@ -196,55 +203,55 @@
             color: white;
             margin-bottom: 40px;
         }
-        
+
         .hero-content {
             max-width: 600px;
         }
-        
+
         .hero-content h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
-        
+
         .hero-content p {
             font-size: 1.1rem;
             margin-bottom: 30px;
             opacity: 0.9;
         }
-        
+
         .hero-actions {
             display: flex;
             gap: 15px;
         }
-        
+
         /* 特点部分样式 */
         .features-section {
             background-color: white;
         }
-        
+
         .section-header {
             text-align: center;
             margin-bottom: 50px;
         }
-        
+
         .section-header h2 {
             font-size: 2.2rem;
             color: var(--dark-color);
         }
-        
+
         .section-header p {
             font-size: 1.1rem;
             color: var(--gray-color);
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .feature-card {
             background-color: white;
             padding: 30px;
@@ -252,34 +259,34 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .feature-icon {
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
-        
+
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
         }
-        
+
         /* 解决方案部分样式 */
         .solutions-section {
             background-color: var(--light-color);
         }
-        
+
         .solutions-wrapper {
             display: flex;
             flex-direction: column;
             gap: 40px;
         }
-        
+
         .solution-item {
             display: flex;
             background-color: white;
@@ -288,60 +295,60 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .solution-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .solution-item:nth-child(even) {
             flex-direction: row-reverse;
         }
-        
+
         .solution-image {
             flex: 1;
             min-height: 300px;
             background-size: cover;
             background-position: center;
         }
-        
+
         .solution-content {
             flex: 1;
             padding: 40px;
         }
-        
+
         .solution-content h3 {
             font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--dark-color);
         }
-        
+
         .solution-features {
             margin: 20px 0;
         }
-        
+
         .solution-features li {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
-        
+
         .solution-features li i {
             color: var(--secondary-color);
             margin-right: 10px;
         }
-        
+
         /* 案例研究部分样式 */
         .cases-section {
             background-color: white;
         }
-        
+
         .cases-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .case-card {
             border-radius: 8px;
             overflow: hidden;
@@ -349,82 +356,82 @@
             transition: transform 0.3s, box-shadow 0.3s;
             background-color: white;
         }
-        
+
         .case-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .case-image {
             height: 200px;
             background-size: cover;
             background-position: center;
         }
-        
+
         .case-content {
             padding: 25px;
         }
-        
+
         .case-content h3 {
             font-size: 1.4rem;
             margin-bottom: 10px;
             color: var(--dark-color);
         }
-        
+
         .case-content p {
             color: var(--gray-color);
             margin-bottom: 15px;
         }
-        
+
         /* 统计部分样式 */
         .stats-section {
             background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
             color: white;
             padding: 70px 0;
         }
-        
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             text-align: center;
         }
-        
+
         .stat-card {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 30px 20px;
             transition: transform 0.3s;
         }
-        
+
         .stat-card:hover {
             transform: translateY(-10px);
             background-color: rgba(255, 255, 255, 0.2);
         }
-        
+
         .stat-icon {
             font-size: 2.5rem;
             margin-bottom: 15px;
             color: rgba(255, 255, 255, 0.9);
         }
-        
+
         .stat-card h3 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
-        
+
         .stat-card p {
             font-size: 1.1rem;
             opacity: 0.8;
             margin-bottom: 0;
         }
-        
+
         /* 联系部分样式 */
         .contact-section {
             background-color: var(--light-color);
         }
-        
+
         .contact-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -434,48 +441,48 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
-        
+
         .contact-content {
             padding: 50px;
             background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
             color: white;
         }
-        
+
         .contact-content h2 {
             font-size: 2rem;
             margin-bottom: 20px;
         }
-        
+
         .contact-content p {
             font-size: 1.1rem;
             margin-bottom: 30px;
             opacity: 0.9;
         }
-        
+
         .contact-info {
             margin-top: 40px;
         }
-        
+
         .contact-info li {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
-        
+
         .contact-info li i {
             margin-right: 15px;
             font-size: 1.2rem;
         }
-        
+
         .contact-form {
             padding: 50px;
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -485,49 +492,49 @@
             font-size: 1rem;
             transition: border-color 0.3s;
         }
-        
+
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--primary-color);
             outline: none;
         }
-        
+
         /* 页脚样式 */
         .footer {
             background-color: var(--dark-color);
             color: white;
             padding: 70px 0 20px;
         }
-        
+
         .footer-top {
             display: grid;
             grid-template-columns: 1.5fr repeat(3, 1fr);
             gap: 40px;
             margin-bottom: 50px;
         }
-        
+
         .footer-logo {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
         }
-        
+
         .footer-logo span {
             font-size: 1.5rem;
             font-weight: 700;
             color: white;
         }
-        
+
         .footer-info p {
             opacity: 0.8;
             margin-bottom: 20px;
         }
-        
+
         .social-links {
             display: flex;
             gap: 15px;
         }
-        
+
         .social-links a {
             display: flex;
             align-items: center;
@@ -539,30 +546,30 @@
             color: white;
             transition: background-color 0.3s;
         }
-        
+
         .social-links a:hover {
             background-color: var(--primary-color);
         }
-        
+
         .link-group h4 {
             font-size: 1.2rem;
             margin-bottom: 20px;
             color: white;
         }
-        
+
         .link-group ul li {
             margin-bottom: 10px;
         }
-        
+
         .link-group ul li a {
             opacity: 0.8;
             transition: opacity 0.3s;
         }
-        
+
         .link-group ul li a:hover {
             opacity: 1;
         }
-        
+
         .footer-bottom {
             display: flex;
             justify-content: space-between;
@@ -570,28 +577,28 @@
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .copyright p {
             opacity: 0.7;
             font-size: 0.9rem;
             margin-bottom: 0;
         }
-        
+
         .footer-nav {
             display: flex;
             gap: 20px;
         }
-        
+
         .footer-nav a {
             opacity: 0.7;
             font-size: 0.9rem;
             transition: opacity 0.3s;
         }
-        
+
         .footer-nav a:hover {
             opacity: 1;
         }
-        
+
         /* 返回顶部按钮 */
         .back-to-top {
             position: fixed;
@@ -614,67 +621,70 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             z-index: 999;
         }
-        
+
         .back-to-top.active {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .back-to-top:hover {
             background-color: #3a5bc7;
         }
-        
+
         /* 响应式设计 */
         @media (max-width: 1024px) {
             .footer-top {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 768px) {
-            .solution-item, .solution-item:nth-child(even) {
+
+            .solution-item,
+            .solution-item:nth-child(even) {
                 flex-direction: column;
             }
-            
+
             .solution-image {
                 min-height: 200px;
             }
-            
+
             .contact-wrapper {
                 grid-template-columns: 1fr;
             }
-            
+
             .footer-top {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
+
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .copyright {
                 margin-bottom: 15px;
             }
         }
-        
+
         @media (max-width: 576px) {
             .hero-content h1 {
                 font-size: 2rem;
             }
-            
+
             .section-header h2 {
                 font-size: 1.8rem;
             }
-            
+
             .hero-actions {
                 flex-direction: column;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- 顶部导航栏 -->
     <header class="header">
@@ -685,7 +695,7 @@
                         <span>临床营养管理系统</span>
                     </a>
                 </div>
-                
+
                 <nav class="navigation">
                     <ul class="nav-menu">
                         <li class="active"><a href="index.html">首页</a></li>
@@ -695,12 +705,12 @@
                         <li><a href="about.html">关于我们</a></li>
                     </ul>
                 </nav>
-                
+
                 <div class="nav-buttons">
                     <a href="contact.html" class="btn btn-contact">联系我们</a>
                     <a href="login.html" class="btn btn-login">系统登录</a>
                 </div>
-                
+
                 <div class="mobile-toggle">
                     <span></span>
                     <span></span>
@@ -741,7 +751,7 @@
                 <h2>系统核心优势</h2>
                 <p>专为医院营养科打造的全流程营养管理解决方案</p>
             </div>
-            
+
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -750,7 +760,7 @@
                     <h3>营养筛查评估</h3>
                     <p>支持NRS-2002、SGA、PG-SGA等多种评估量表，自动计算评分并给出风险等级</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="bi bi-card-checklist"></i>
@@ -758,7 +768,7 @@
                     <h3>营养诊断决策</h3>
                     <p>基于GLIM标准和临床指南，辅助医生进行精准营养诊断和治疗决策</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="bi bi-calculator"></i>
@@ -766,7 +776,7 @@
                     <h3>营养需求计算</h3>
                     <p>多模型计算患者能量、蛋白质等营养素需求，支持特殊人群个性化调整</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="bi bi-pie-chart"></i>
@@ -774,7 +784,7 @@
                     <h3>膳食方案设计</h3>
                     <p>智能配餐系统，根据患者病情和营养需求，自动生成个性化膳食方案</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="bi bi-graph-up"></i>
@@ -782,7 +792,7 @@
                     <h3>营养监测随访</h3>
                     <p>记录干预效果，动态调整营养方案，实现全程化随访管理</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="bi bi-file-earmark-text"></i>
@@ -801,7 +811,7 @@
                 <h2>专业解决方案</h2>
                 <p>覆盖医院营养管理全场景需求</p>
             </div>
-            
+
             <div class="solutions-wrapper">
                 <div class="solution-item">
                     <div class="solution-content">
@@ -813,13 +823,14 @@
                             <li><i class="bi bi-check-circle"></i> 营养支持实施监测</li>
                             <li><i class="bi bi-check-circle"></i> 出院营养指导</li>
                         </ul>
-                        <a href="solutions.html#inpatient" class="btn btn-outline">了解更多 <i class="bi bi-arrow-right"></i></a>
+                        <a href="solutions.html#inpatient" class="btn btn-outline">了解更多 <i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
                     <div class="solution-image">
                         <img src="images/inpatient-solution.jpg" alt="住院患者营养管理">
                     </div>
                 </div>
-                
+
                 <div class="solution-item reverse">
                     <div class="solution-content">
                         <h3>门诊营养咨询管理</h3>
@@ -830,13 +841,14 @@
                             <li><i class="bi bi-check-circle"></i> 随访提醒与管理</li>
                             <li><i class="bi bi-check-circle"></i> 电子营养处方</li>
                         </ul>
-                        <a href="solutions.html#outpatient" class="btn btn-outline">了解更多 <i class="bi bi-arrow-right"></i></a>
+                        <a href="solutions.html#outpatient" class="btn btn-outline">了解更多 <i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
                     <div class="solution-image">
                         <img src="images/outpatient-solution.jpg" alt="门诊营养咨询管理">
                     </div>
                 </div>
-                
+
                 <div class="solution-item">
                     <div class="solution-content">
                         <h3>医院膳食管理</h3>
@@ -847,7 +859,8 @@
                             <li><i class="bi bi-check-circle"></i> 膳食成本核算</li>
                             <li><i class="bi bi-check-circle"></i> 食材供应链管理</li>
                         </ul>
-                        <a href="solutions.html#dietary" class="btn btn-outline">了解更多 <i class="bi bi-arrow-right"></i></a>
+                        <a href="solutions.html#dietary" class="btn btn-outline">了解更多 <i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
                     <div class="solution-image">
                         <img src="images/dietary-solution.jpg" alt="医院膳食管理">
@@ -864,7 +877,7 @@
                 <h2>成功案例</h2>
                 <p>已服务全国超过200家医疗机构</p>
             </div>
-            
+
             <div class="cases-grid">
                 <div class="case-card">
                     <div class="case-image">
@@ -876,7 +889,7 @@
                         <a href="cases.html#case1" class="btn btn-text">查看详情 <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="case-card">
                     <div class="case-image">
                         <img src="images/hospital-2.jpg" alt="某肿瘤专科医院案例">
@@ -887,7 +900,7 @@
                         <a href="cases.html#case2" class="btn btn-text">查看详情 <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="case-card">
                     <div class="case-image">
                         <img src="images/hospital-3.jpg" alt="某医院集团案例">
@@ -913,7 +926,7 @@
                     <h3><span class="counter">200</span>+</h3>
                     <p>合作医院</p>
                 </div>
-                
+
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="bi bi-people"></i>
@@ -921,7 +934,7 @@
                     <h3><span class="counter">500</span>万+</h3>
                     <p>管理患者数</p>
                 </div>
-                
+
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="bi bi-hand-thumbs-up"></i>
@@ -929,7 +942,7 @@
                     <h3><span class="counter">98</span>%</h3>
                     <p>客户满意度</p>
                 </div>
-                
+
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="bi bi-graph-up-arrow"></i>
@@ -953,7 +966,7 @@
                         <li><i class="bi bi-envelope"></i> contact@nutrition-system.com</li>
                     </ul>
                 </div>
-                
+
                 <div class="contact-form">
                     <form id="demo-form">
                         <div class="form-group">
@@ -996,7 +1009,7 @@
                         <a href="#"><i class="bi bi-envelope"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-links">
                     <div class="link-group">
                         <h4>产品服务</h4>
@@ -1007,7 +1020,7 @@
                             <li><a href="update.html">更新日志</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="link-group">
                         <h4>资源中心</h4>
                         <ul>
@@ -1017,7 +1030,7 @@
                             <li><a href="videos.html">视频教程</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="link-group">
                         <h4>关于我们</h4>
                         <ul>
@@ -1029,7 +1042,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="copyright">
                     <p>&copy; 2023 临床营养管理系统 版权所有 | 粤ICP备XXXXXXXX号</p>
@@ -1047,39 +1060,39 @@
     <div class="back-to-top">
         <i class="bi bi-arrow-up"></i>
     </div>
-    
+
     <!-- JavaScript 文件 -->
     <script src="js/main.js"></script>
     <script>
         // 返回顶部按钮功能
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const backToTop = document.querySelector('.back-to-top');
-            
-            window.addEventListener('scroll', function() {
+
+            window.addEventListener('scroll', function () {
                 if (window.pageYOffset > 300) {
                     backToTop.classList.add('active');
                 } else {
                     backToTop.classList.remove('active');
                 }
             });
-            
-            backToTop.addEventListener('click', function() {
+
+            backToTop.addEventListener('click', function () {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             });
-            
+
             // 数字计数动画
             const counters = document.querySelectorAll('.counter');
             const speed = 200;
-            
+
             function animateCounters() {
                 counters.forEach(counter => {
                     const target = +counter.textContent;
                     let count = 0;
                     const increment = target / speed;
-                    
+
                     const updateCount = () => {
                         if (count < target) {
                             count += increment;
@@ -1089,14 +1102,14 @@
                             counter.textContent = target;
                         }
                     };
-                    
+
                     updateCount();
                 });
             }
-            
+
             // 监听滚动到统计部分时触发动画
             const statsSection = document.querySelector('.stats-section');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1105,11 +1118,12 @@
                     }
                 });
             }, { threshold: 0.5 });
-            
+
             if (statsSection) {
                 observer.observe(statsSection);
             }
         });
     </script>
 </body>
-</html> 
+
+</html>
