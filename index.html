@@ -682,6 +682,143 @@
                 flex-direction: column;
             }
         }
+
+        .about-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .about-card {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .about-card p {
+            color: var(--gray-color);
+            line-height: 1.8;
+        }
+
+        .company-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--light-color);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .value-item h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .value-item p {
+            color: var(--gray-color);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .company-values {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 修改导航菜单样式 */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-menu li:last-child {
+            margin-left: 20px;
+            /* 给联系我们按钮添加左边距 */
+        }
+
+        .nav-menu li:last-child a {
+            padding: 8px 20px;
+            border-radius: 5px;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .nav-menu li:last-child a:hover {
+            background-color: #3a5bc7;
+            color: white;
+        }
+
+        /* 移除原有的nav-buttons */
+        .nav-buttons {
+            display: none;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-menu li:last-child {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .nav-menu li:last-child a {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -698,18 +835,14 @@
 
                 <nav class="navigation">
                     <ul class="nav-menu">
-                        <li class="active"><a href="index.html">首页</a></li>
-                        <li><a href="features.html">系统功能</a></li>
-                        <li><a href="solutions.html">解决方案</a></li>
-                        <li><a href="cases.html">成功案例</a></li>
-                        <li><a href="about.html">关于我们</a></li>
+                        <li class="active"><a href="#home">首页</a></li>
+                        <li><a href="#features">系统功能</a></li>
+                        <li><a href="#solutions">解决方案</a></li>
+                        <li><a href="#cases">成功案例</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#contact" class="btn btn-primary">联系我们</a></li>
                     </ul>
                 </nav>
-
-                <div class="nav-buttons">
-                    <a href="contact.html" class="btn btn-contact">联系我们</a>
-                    <a href="login.html" class="btn btn-login">系统登录</a>
-                </div>
 
                 <div class="mobile-toggle">
                     <span></span>
@@ -721,7 +854,7 @@
     </header>
 
     <!-- 主横幅 -->
-    <section class="hero-banner">
+    <section id="home" class="hero-banner">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -745,7 +878,7 @@
     </section>
 
     <!-- 系统特点 -->
-    <section class="features-section">
+    <section id="features" class="features-section">
         <div class="container">
             <div class="section-header text-center">
                 <h2>系统核心优势</h2>
@@ -805,10 +938,10 @@
     </section>
 
     <!-- 解决方案 -->
-    <section class="solutions-section">
+    <section id="solutions" class="solutions-section">
         <div class="container">
             <div class="section-header text-center">
-                <h2>专业解决方案</h2>
+                <h2>营养专业解决方案</h2>
                 <p>覆盖医院营养管理全场景需求</p>
             </div>
 
@@ -871,7 +1004,7 @@
     </section>
 
     <!-- 客户案例 -->
-    <section class="cases-section">
+    <section id="cases" class="cases-section">
         <div class="container">
             <div class="section-header text-center">
                 <h2>成功案例</h2>
@@ -954,16 +1087,67 @@
         </div>
     </section>
 
+    <!-- 添加关于我们部分 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>关于天津医久科技</h2>
+                <p>专注临床营养管理系统研发，助力医疗机构提升营养管理水平</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h3>公司简介</h3>
+                        <p>天津医久科技有限公司是一家专注于医疗信息化领域的高新技术企业，致力于为医疗机构提供专业的临床营养管理解决方案。公司汇集了一批在医疗信息化、临床营养学、软件开发等领域的专业人才，以技术创新为驱动，为医疗机构提供全方位的营养管理信息化服务。
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+                        <h3>发展使命</h3>
+                        <p>通过信息化手段推动医疗机构营养管理水平的提升，为患者提供更专业、更精准的营养医疗服务。我们始终坚持"以客户为中心，以创新为动力"的发展理念，持续优化产品与服务。</p>
+                    </div>
+                </div>
+
+                <div class="company-values">
+                    <div class="value-item">
+                        <i class="bi bi-lightbulb"></i>
+                        <h4>创新驱动</h4>
+                        <p>持续技术创新，引领行业发展</p>
+                    </div>
+
+                    <div class="value-item">
+                        <i class="bi bi-heart-pulse"></i>
+                        <h4>专业专注</h4>
+                        <p>深耕临床营养领域，提供专业解决方案</p>
+                    </div>
+
+                    <div class="value-item">
+                        <i class="bi bi-people"></i>
+                        <h4>服务至上</h4>
+                        <p>以客户需求为导向，提供优质服务体验</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 联系咨询 -->
-    <section class="contact-section">
+    <section id="contact" class="contact-section">
         <div class="container">
             <div class="contact-wrapper">
                 <div class="contact-content">
                     <h2>开启智能营养管理新时代</h2>
                     <p>申请免费演示，了解如何通过临床营养管理系统提升医院营养服务水平</p>
                     <ul class="contact-info">
-                        <li><i class="bi bi-telephone"></i> 400-888-9999</li>
-                        <li><i class="bi bi-envelope"></i> contact@nutrition-system.com</li>
+                        <li><i class="bi bi-telephone"></i> 15102291514</li>
+                        <li><i class="bi bi-envelope"></i> market@yijiumedical.com</li>
                     </ul>
                 </div>
 
@@ -1122,6 +1306,69 @@
             if (statsSection) {
                 observer.observe(statsSection);
             }
+        });
+
+        // 添加平滑滚动功能
+        document.addEventListener('DOMContentLoaded', function () {
+            // 获取所有导航链接
+            const navLinks = document.querySelectorAll('.nav-menu a');
+
+            // 为每个链接添加点击事件
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault(); // 阻止默认跳转
+
+                    // 获取目标部分的id
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        // 计算需要滚动的距离（考虑固定导航栏的高度）
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = targetSection.offsetTop - headerHeight;
+
+                        // 平滑滚动到目标位置
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // 更新活动状态
+                        navLinks.forEach(link => link.parentElement.classList.remove('active'));
+                        this.parentElement.classList.add('active');
+                    }
+                });
+            });
+
+            // 监听滚动事件来更新导航栏活动状态
+            window.addEventListener('scroll', function () {
+                const scrollPosition = window.scrollY;
+                const headerHeight = document.querySelector('.header').offsetHeight;
+
+                // 获取所有section
+                const sections = document.querySelectorAll('section[id]');
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - headerHeight - 100; // 添加一些偏移量使切换更自然
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        // 更新导航栏活动状态
+                        navLinks.forEach(link => {
+                            const href = link.getAttribute('href');
+                            if (href === '#' + section.id) {
+                                link.parentElement.classList.add('active');
+                                // 特殊处理联系我们按钮的样式
+                                if (section.id === 'contact') {
+                                    link.style.color = 'white';
+                                }
+                            } else {
+                                link.parentElement.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>

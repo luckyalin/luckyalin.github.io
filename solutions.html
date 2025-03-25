@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +17,13 @@
             padding: 60px 0;
             margin-bottom: 50px;
         }
-        
+
         .page-title {
             font-size: 36px;
             font-weight: 700;
             margin-bottom: 15px;
         }
-        
+
         .page-description {
             font-size: 18px;
             opacity: 0.9;
@@ -30,28 +31,28 @@
             margin: 0 auto;
             line-height: 1.6;
         }
-        
+
         .solution-section {
             padding: 60px 0;
             border-bottom: 1px solid var(--border-color);
         }
-        
+
         .solution-section:last-child {
             border-bottom: none;
         }
-        
+
         .solution-header {
             text-align: center;
             margin-bottom: 40px;
         }
-        
+
         .solution-title {
             font-size: 30px;
             font-weight: 700;
             margin-bottom: 15px;
             color: var(--text-dark);
         }
-        
+
         .solution-subtitle {
             font-size: 18px;
             color: var(--text-medium);
@@ -59,19 +60,19 @@
             margin: 0 auto;
             line-height: 1.6;
         }
-        
+
         .solution-content {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             gap: 40px;
         }
-        
+
         .solution-info {
             flex: 1;
             min-width: 300px;
         }
-        
+
         .solution-image {
             flex: 1;
             min-width: 300px;
@@ -79,56 +80,56 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
         }
-        
+
         .solution-image img {
             width: 100%;
             height: auto;
             display: block;
         }
-        
+
         .solution-description {
             margin-bottom: 25px;
             line-height: 1.7;
             color: var(--text-medium);
         }
-        
+
         .solution-features {
             margin-bottom: 30px;
         }
-        
+
         .feature-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 15px;
         }
-        
+
         .feature-icon {
             color: var(--primary-color);
             font-size: 18px;
             margin-right: 15px;
             margin-top: 3px;
         }
-        
+
         .feature-info h4 {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 5px;
             color: var(--text-dark);
         }
-        
+
         .feature-info p {
             font-size: 15px;
             color: var(--text-medium);
             line-height: 1.6;
         }
-        
+
         .anchor-target {
             display: block;
             position: relative;
             top: -100px;
             visibility: hidden;
         }
-        
+
         /* 联系我们区域样式 */
         .contact-cta {
             background-color: var(--light-bg);
@@ -136,43 +137,44 @@
             margin: 50px 0 0;
             border-radius: 10px;
         }
-        
+
         .cta-content {
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .cta-content h2 {
             font-size: 30px;
             font-weight: 700;
             margin-bottom: 15px;
             color: var(--text-dark);
         }
-        
+
         .cta-content p {
             font-size: 18px;
             color: var(--text-medium);
             margin-bottom: 30px;
         }
-        
+
         .cta-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
-        
+
         @media (max-width: 768px) {
             .solution-content {
                 flex-direction: column;
             }
-            
+
             .solution-content.reverse {
                 flex-direction: column-reverse;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- 顶部导航栏 -->
     <header class="header">
@@ -184,7 +186,7 @@
                         <span>营养管理</span>
                     </a>
                 </div>
-                
+
                 <nav class="navigation">
                     <ul class="nav-menu">
                         <li><a href="index.html">首页</a></li>
@@ -194,12 +196,12 @@
                         <li><a href="about.html">关于我们</a></li>
                     </ul>
                 </nav>
-                
+
                 <div class="nav-buttons">
                     <a href="contact.html" class="btn btn-contact">联系我们</a>
-                    <a href="login.html" class="btn btn-login">系统登录</a>
+                    <!-- <a href="login.html" class="btn btn-login">系统登录</a> -->
                 </div>
-                
+
                 <div class="mobile-toggle">
                     <span></span>
                     <span></span>
@@ -212,7 +214,7 @@
     <!-- 页面横幅 -->
     <section class="page-banner">
         <div class="container">
-            <h1 class="page-title text-center">专业解决方案</h1>
+            <h1 class="page-title text-center">营养专业解决方案</h1>
             <p class="page-description text-center">临床营养管理系统提供全面的营养管理解决方案，覆盖医院各类场景需求，助力提升营养治疗质量</p>
         </div>
     </section>
@@ -227,13 +229,13 @@
                     <h2 class="solution-title">住院患者营养管理</h2>
                     <p class="solution-subtitle">全面提升住院患者的营养筛查、评估、干预和监测全流程管理水平，降低营养不良发生率</p>
                 </div>
-                
+
                 <div class="solution-content">
                     <div class="solution-info">
                         <p class="solution-description">
                             住院患者营养管理解决方案针对医院住院患者提供全流程营养管理服务，从入院筛查、营养评估到营养干预方案制定与实施，再到效果监测和出院指导，实现闭环管理，提高患者营养治疗的依从性和效果。
                         </p>
-                        
+
                         <div class="solution-features">
                             <div class="feature-item">
                                 <div class="feature-icon">
@@ -244,7 +246,7 @@
                                     <p>实现入院48小时内营养筛查全覆盖，自动预警高风险患者，确保及时干预</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -254,7 +256,7 @@
                                     <p>结合人体测量、生化指标、食物摄入等多维度数据，形成全面的营养状况评估</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -264,7 +266,7 @@
                                     <p>基于疾病特点和患者个体差异，智能生成个性化膳食和营养支持方案</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -274,7 +276,7 @@
                                     <p>标准化医嘱模板，支持口服、肠内和肠外营养医嘱管理，与HIS系统无缝对接</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -284,7 +286,7 @@
                                     <p>实时监测患者营养摄入和各项指标变化，动态调整营养支持方案</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -295,16 +297,16 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <a href="contact.html" class="btn btn-primary">咨询详情</a>
                     </div>
-                    
+
                     <div class="solution-image">
                         <img src="images/inpatient-solution.jpg" alt="住院患者营养管理解决方案">
                     </div>
                 </div>
             </section>
-            
+
             <!-- 门诊营养咨询管理 -->
             <section class="solution-section" id="outpatient">
                 <span class="anchor-target"></span>
@@ -312,17 +314,17 @@
                     <h2 class="solution-title">门诊营养咨询管理</h2>
                     <p class="solution-subtitle">提升营养门诊工作效率，实现患者营养干预全程追踪，提高随访和干预依从性</p>
                 </div>
-                
+
                 <div class="solution-content reverse">
                     <div class="solution-image">
                         <img src="images/outpatient-solution.jpg" alt="门诊营养咨询管理解决方案">
                     </div>
-                    
+
                     <div class="solution-info">
                         <p class="solution-description">
                             门诊营养咨询管理解决方案专为医院营养门诊设计，提供营养咨询全流程管理，从预约挂号、营养评估、饮食分析、干预方案制定到长期随访管理，全面提升营养门诊服务效率和质量。
                         </p>
-                        
+
                         <div class="solution-features">
                             <div class="feature-item">
                                 <div class="feature-icon">
@@ -333,7 +335,7 @@
                                     <p>提供线上预约、排班管理功能，减少患者等待时间，提高门诊工作效率</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -343,7 +345,7 @@
                                     <p>针对糖尿病、高血压、高脂血症等慢性疾病，提供标准化营养管理方案</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -353,7 +355,7 @@
                                     <p>多种饮食调查方法，精确分析患者膳食摄入情况，评估营养素平衡状况</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -363,7 +365,7 @@
                                     <p>根据疾病和个人喜好生成个性化食谱和饮食建议，提高患者依从性</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -373,7 +375,7 @@
                                     <p>自动随访提醒功能，记录患者执行情况和效果，支持线上随访交流</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -384,12 +386,12 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <a href="contact.html" class="btn btn-primary">咨询详情</a>
                     </div>
                 </div>
             </section>
-            
+
             <!-- 医院膳食管理 -->
             <section class="solution-section" id="dietary">
                 <span class="anchor-target"></span>
@@ -397,13 +399,13 @@
                     <h2 class="solution-title">医院膳食管理</h2>
                     <p class="solution-subtitle">优化医院膳食供应流程，提高治疗膳食精准配送能力，确保患者获得安全、营养、美味的饮食</p>
                 </div>
-                
+
                 <div class="solution-content">
                     <div class="solution-info">
                         <p class="solution-description">
                             医院膳食管理解决方案针对医院食堂和营养科膳食管理工作，实现从食谱设计、原料采购、生产加工到配膳分发的全流程信息化管理，确保患者获得符合医嘱要求的个性化治疗膳食。
                         </p>
-                        
+
                         <div class="solution-features">
                             <div class="feature-item">
                                 <div class="feature-icon">
@@ -414,7 +416,7 @@
                                     <p>建立食谱库与膳食循环周期，根据季节和原料供应自动生成膳食计划</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -424,7 +426,7 @@
                                     <p>支持多种疾病治疗膳食设计，实现个性化配餐与精准营养供给</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -434,7 +436,7 @@
                                     <p>原料采购、库存、消耗全流程管理，降低食材浪费，控制成本</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -444,7 +446,7 @@
                                     <p>根据患者医嘱和个人口味喜好进行个性化配餐，提高满意度</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -454,7 +456,7 @@
                                     <p>提供详细的膳食成本核算和分析报表，优化资源配置</p>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="bi bi-check-circle-fill"></i>
@@ -465,16 +467,16 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <a href="contact.html" class="btn btn-primary">咨询详情</a>
                     </div>
-                    
+
                     <div class="solution-image">
                         <img src="images/dietary-solution.jpg" alt="医院膳食管理解决方案">
                     </div>
                 </div>
             </section>
-            
+
             <!-- 联系我们区域 -->
             <section class="contact-cta">
                 <div class="cta-content text-center">
@@ -500,7 +502,7 @@
                     </div>
                     <p>专业的医院临床营养管理解决方案提供商，致力于通过信息化手段提升医疗机构营养治疗水平</p>
                 </div>
-                
+
                 <div class="footer-links">
                     <div class="link-group">
                         <h4>产品</h4>
@@ -511,7 +513,7 @@
                             <li><a href="updates.html">更新日志</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="link-group">
                         <h4>资源</h4>
                         <ul>
@@ -521,7 +523,7 @@
                             <li><a href="faq.html">常见问题</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="link-group">
                         <h4>关于我们</h4>
                         <ul>
@@ -533,12 +535,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="copyright">
                     &copy; 2023 临床营养管理系统 版权所有
                 </div>
-                
+
                 <div class="footer-social">
                     <a href="#"><i class="bi bi-wechat"></i></a>
                     <a href="#"><i class="bi bi-telephone-fill"></i></a>
@@ -552,12 +554,12 @@
     <script src="js/main.js"></script>
     <script>
         // 页面平滑滚动功能
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // 获取URL中的锚点
             const hash = window.location.hash;
             if (hash) {
                 // 延迟执行滚动，确保页面已完全加载
-                setTimeout(function() {
+                setTimeout(function () {
                     const targetSection = document.querySelector(hash);
                     if (targetSection) {
                         // 平滑滚动到目标位置并留出导航栏的高度
@@ -568,10 +570,10 @@
                     }
                 }, 100);
             }
-            
+
             // 为页内链接添加平滑滚动效果
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const target = document.querySelector(targetId);
@@ -588,4 +590,5 @@
         });
     </script>
 </body>
-</html> 
+
+</html>
