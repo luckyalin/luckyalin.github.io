@@ -198,30 +198,113 @@
 
         /* Banner样式 */
         .hero-banner {
-            padding: 160px 0 80px;
-            background: linear-gradient(135deg, #4e73df 0%, #36b9cc 100%);
-            color: white;
-            margin-bottom: 40px;
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/pattern.png') repeat;
+            opacity: 0.1;
         }
 
         .hero-content {
-            max-width: 600px;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.2;
+        }
+
+        .hero-content h2 {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+            font-weight: 500;
         }
 
         .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 35px;
         }
 
-        .hero-actions {
-            display: flex;
-            gap: 15px;
+        .hero-buttons {
+            margin-top: 30px;
+        }
+
+        .btn-secondary {
+            background-color: #1cc88a;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(28, 200, 138, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #17a673;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(28, 200, 138, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner {
+                padding: 120px 0 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
         }
 
         /* 特点部分样式 */
@@ -274,6 +357,16 @@
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
+        }
+
+        .feature-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .feature-card:hover a {
+            color: inherit;
         }
 
         /* 解决方案部分样式 */
@@ -503,16 +596,16 @@
         .footer {
             background-color: var(--dark-color);
             color: white;
-            padding: 70px 0 20px;
+            padding: 50px 0 20px;
         }
 
         .footer-top {
             display: grid;
             grid-template-columns: 1.8fr repeat(3, 1fr);
-            gap: 60px;
-            margin-bottom: 50px;
-            padding-bottom: 50px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 40px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: none;
         }
 
         .footer-logo {
@@ -528,7 +621,7 @@
         }
 
         .footer-info {
-            padding-right: 30px;
+            padding-right: 20px;
         }
 
         .footer-info p {
@@ -538,7 +631,7 @@
         }
 
         .contact-details {
-            margin: 25px 0;
+            margin: 20px 0;
         }
 
         .contact-item {
@@ -570,7 +663,7 @@
 
         .link-group h4 {
             font-size: 1.2rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: white;
             position: relative;
             padding-bottom: 15px;
@@ -603,6 +696,7 @@
 
         .footer-bottom {
             padding-top: 25px;
+            border-top: none;
         }
 
         .copyright p {
@@ -615,6 +709,7 @@
 
         .footer-nav {
             gap: 30px;
+            border-top: none;
         }
 
         .footer-nav a {
@@ -880,7 +975,6 @@
                         <h2>提升医院营养管理的专业智能解决方案</h2>
                         <p>整合营养评估、膳食干预、监测随访的全流程管理，为患者提供科学、精准的个性化营养服务</p>
                         <div class="hero-buttons">
-                            <a href="demo.html" class="btn btn-primary">免费演示</a>
                             <a href="#contact" class="btn btn-secondary">咨询方案</a>
                         </div>
                     </div>
@@ -904,51 +998,63 @@
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-clipboard2-pulse"></i>
-                    </div>
-                    <h3>营养筛查评估</h3>
-                    <p>支持NRS-2002、SGA、PG-SGA等多种评估量表，自动计算评分并给出风险等级</p>
+                    <a href="features.html#screening">
+                        <div class="feature-icon">
+                            <i class="bi bi-clipboard2-pulse"></i>
+                        </div>
+                        <h3>营养筛查评估</h3>
+                        <p>支持NRS-2002、SGA、PG-SGA等多种评估量表，自动计算评分并给出风险等级</p>
+                    </a>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-card-checklist"></i>
-                    </div>
-                    <h3>营养诊断决策</h3>
-                    <p>基于GLIM标准和临床指南，辅助医生进行精准营养诊断和治疗决策</p>
+                    <a href="features.html#diagnosis">
+                        <div class="feature-icon">
+                            <i class="bi bi-card-checklist"></i>
+                        </div>
+                        <h3>营养诊断决策</h3>
+                        <p>基于GLIM标准和临床指南，辅助医生进行精准营养诊断和治疗决策</p>
+                    </a>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-calculator"></i>
-                    </div>
-                    <h3>营养需求计算</h3>
-                    <p>多模型计算患者能量、蛋白质等营养素需求，支持特殊人群个性化调整</p>
+                    <a href="features.html#calculation">
+                        <div class="feature-icon">
+                            <i class="bi bi-calculator"></i>
+                        </div>
+                        <h3>营养需求计算</h3>
+                        <p>多模型计算患者能量、蛋白质等营养素需求，支持特殊人群个性化调整</p>
+                    </a>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-pie-chart"></i>
-                    </div>
-                    <h3>膳食方案设计</h3>
-                    <p>智能配餐系统，根据患者病情和营养需求，自动生成个性化膳食方案</p>
+                    <a href="features.html#diet">
+                        <div class="feature-icon">
+                            <i class="bi bi-pie-chart"></i>
+                        </div>
+                        <h3>膳食方案设计</h3>
+                        <p>智能配餐系统，根据患者病情和营养需求，自动生成个性化膳食方案</p>
+                    </a>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-graph-up"></i>
-                    </div>
-                    <h3>营养监测随访</h3>
-                    <p>记录干预效果，动态调整营养方案，实现全程化随访管理</p>
+                    <a href="features.html#monitoring">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h3>营养监测随访</h3>
+                        <p>记录干预效果，动态调整营养方案，实现全程化随访管理</p>
+                    </a>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-file-earmark-text"></i>
-                    </div>
-                    <h3>数据报表分析</h3>
-                    <p>多维度统计分析，支持科研数据导出，助力临床营养研究</p>
+                    <a href="features.html#analysis">
+                        <div class="feature-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h3>数据报表分析</h3>
+                        <p>多维度统计分析，支持科研数据导出，助力临床营养研究</p>
+                    </a>
                 </div>
             </div>
         </div>

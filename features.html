@@ -192,6 +192,53 @@
                 font-size: 14px;
             }
         }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            /* 统一图标颜色为蓝色 */
+        }
+
+        .contact-item span {
+            letter-spacing: 0.5px;
+            /* 添加字体间距 */
+        }
+
+        .link-group ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            /* 添加字体间距 */
+        }
+
+        /* 修改页脚样式 */
+        .footer-bottom {
+            padding-top: 25px;
+            border-top: none;
+            /* 删除上边框 */
+        }
+
+        .footer-nav {
+            gap: 30px;
+            border-top: none;
+            /* 删除上边框 */
+        }
+
+        .footer-top {
+            border-bottom: none;
+            /* 删除下边框 */
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+        }
     </style>
 </head>
 
@@ -545,58 +592,56 @@
             <div class="footer-top">
                 <div class="footer-info">
                     <div class="footer-logo">
-                        <img src="images/logo.svg" alt="临床营养管理系统">
-                        <span>临床营养管理系统</span>
+                        <span>天津医久科技</span>
                     </div>
-                    <p>专业医院营养管理信息化解决方案提供商</p>
-                    <div class="social-links">
-                        <a href="#"><i class="bi bi-wechat"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                        <a href="#"><i class="bi bi-envelope"></i></a>
+                    <p>专业医院营养管理信息化解决方案提供商，致力于提升医疗机构营养管理水平，为患者提供更优质的营养医疗服务。</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="bi bi-telephone"></i>
+                            <span>15102291514</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope"></i>
+                            <span>market@yijiumedical.com</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>产品服务</h4>
-                        <ul>
-                            <li><a href="features.html">系统功能</a></li>
-                            <li><a href="solutions.html">解决方案</a></li>
-                            <li><a href="pricing.html">价格方案</a></li>
-                            <li><a href="update.html">更新日志</a></li>
-                        </ul>
-                    </div>
+                <div class="link-group">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="#features">系统功能</a></li>
+                        <li><a href="#solutions">解决方案</a></li>
+                        <li><a href="#cases">成功案例</a></li>
+                    </ul>
+                </div>
 
-                    <div class="link-group">
-                        <h4>资源中心</h4>
-                        <ul>
-                            <li><a href="blog.html">营养科普</a></li>
-                            <li><a href="research.html">研究论文</a></li>
-                            <li><a href="guidelines.html">临床指南</a></li>
-                            <li><a href="videos.html">视频教程</a></li>
-                        </ul>
-                    </div>
+                <div class="link-group">
+                    <h4>区域覆盖</h4>
+                    <ul>
+                        <li><a href="#">西南大区</a></li>
+                        <li><a href="#">北方大区</a></li>
+                        <li><a href="#">中部大区</a></li>
+                        <li><a href="#">华东大区</a></li>
+                    </ul>
+                </div>
 
-                    <div class="link-group">
-                        <h4>关于我们</h4>
-                        <ul>
-                            <li><a href="about.html">公司简介</a></li>
-                            <li><a href="team.html">团队介绍</a></li>
-                            <li><a href="careers.html">加入我们</a></li>
-                            <li><a href="contact.html">联系方式</a></li>
-                        </ul>
-                    </div>
+                <div class="link-group">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#about">公司简介</a></li>
+                        <li><a href="#contact">联系方式</a></li>
+                    </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <div class="copyright">
-                    <p>&copy; 2023 临床营养管理系统 版权所有 | 粤ICP备XXXXXXXX号</p>
+                    <p>&copy; 2023 天津医久科技有限公司 版权所有 | <a href="icp.html">津ICP备XXXXXXXX号</a></p>
                 </div>
                 <div class="footer-nav">
                     <a href="privacy.html">隐私政策</a>
                     <a href="terms.html">使用条款</a>
-                    <a href="sitemap.html">网站地图</a>
                 </div>
             </div>
         </div>
