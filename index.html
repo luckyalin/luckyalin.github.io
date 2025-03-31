@@ -1536,8 +1536,8 @@
 
             // 使用 EmailJS 发送邮件
             emailjs.send(
-                'service_92qwn4h',  // 检查 Service ID 是否正确
-                'template_ya1ktsf', // 检查 Template ID 是否正确
+                'service_92qwn4h',
+                'template_ya1ktsf',
                 {
                     to_email: '511128590@qq.com',
                     from_name: formData.name,
@@ -1549,13 +1549,12 @@
                 }
             ).then(
                 function (response) {
-                    console.log("SUCCESS", response); // 添加成功日志
-                    alert('预约演示信息已成功发送！我们会尽快与您联系。');
+                    console.log("SUCCESS", response);
                     e.target.reset();
                 },
                 function (error) {
-                    console.log("FAILED", error); // 添加详细错误信息
-                    alert('发送失败：' + error.text);  // 显示具体错误信息
+                    console.log("FAILED", error);
+                    alert('发送失败：' + error.text);
                 }
             );
         });

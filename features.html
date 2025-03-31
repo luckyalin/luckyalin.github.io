@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- 引入字体图标 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         /* 功能页面特定样式 */
         .page-banner {
@@ -676,6 +677,50 @@
                     document.getElementById(tabId).classList.add('active');
                 });
             });
+        });
+
+        // 初始化 EmailJS
+        (function () {
+            emailjs.init("TR_MBiuKp0hqwxJn2");
+        })();
+
+        // 处理表单提交
+        document.getElementById('demo-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // 获取表单数据
+            const formData = {
+                name: this.name.value,
+                hospital: this.hospital.value,
+                position: this.position.value || '未填写',
+                phone: this.phone.value,
+                email: this.email.value || '未填写',
+                message: this.message.value || '未填写'
+            };
+
+            // 使用 EmailJS 发送邮件
+            emailjs.send(
+                'service_92qwn4h',
+                'template_ya1ktsf',
+                {
+                    to_email: '511128590@qq.com',
+                    from_name: formData.name,
+                    hospital: formData.hospital,
+                    position: formData.position,
+                    phone: formData.phone,
+                    email: formData.email,
+                    message: formData.message
+                }
+            ).then(
+                function (response) {
+                    console.log("SUCCESS", response);
+                    e.target.reset();  // 只保留表单重置
+                },
+                function (error) {
+                    console.log("FAILED", error);
+                    alert('发送失败：' + error.text);
+                }
+            );
         });
     </script>
 </body>
