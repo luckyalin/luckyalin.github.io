@@ -225,6 +225,204 @@
         .logo span {
             color: var(--primary-color);
         }
+
+        /* 响应式设计样式 */
+        @media (max-width: 768px) {
+
+            /* 页面横幅 */
+            .page-banner {
+                padding: 40px 0;
+                margin-bottom: 30px;
+            }
+
+            .page-title {
+                font-size: 28px;
+            }
+
+            .page-description {
+                font-size: 16px;
+                padding: 0 15px;
+            }
+
+            /* 解决方案部分 */
+            .solution-section {
+                padding: 40px 0;
+            }
+
+            .solution-header {
+                margin-bottom: 30px;
+                padding: 0 15px;
+            }
+
+            .solution-title {
+                font-size: 24px;
+            }
+
+            .solution-subtitle {
+                font-size: 16px;
+            }
+
+            .solution-content {
+                flex-direction: column;
+                padding: 0 15px;
+            }
+
+            .solution-info {
+                min-width: 100%;
+            }
+
+            .solution-image {
+                min-width: 100%;
+            }
+
+            .solution-description {
+                font-size: 15px;
+            }
+
+            .feature-item {
+                margin-bottom: 20px;
+            }
+
+            .feature-info h4 {
+                font-size: 16px;
+            }
+
+            .feature-info p {
+                font-size: 14px;
+            }
+
+            /* 联系表单部分 */
+            .contact-section {
+                padding: 40px 0;
+            }
+
+            .contact-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .contact-content {
+                text-align: center;
+                padding: 0 15px;
+            }
+
+            .contact-content h2 {
+                font-size: 24px;
+            }
+
+            .contact-content p {
+                font-size: 16px;
+            }
+
+            .contact-form {
+                width: 100%;
+                padding: 0 15px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            /* 页脚部分 */
+            .footer-top {
+                flex-direction: column;
+                gap: 30px;
+                padding: 40px 15px;
+            }
+
+            .footer-info {
+                text-align: center;
+            }
+
+            .link-group {
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+                padding: 20px 15px;
+            }
+
+            .footer-nav {
+                justify-content: center;
+            }
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .solution-image div {
+                height: 300px !important;
+                padding: 20px !important;
+            }
+
+            .badge {
+                font-size: 12px !important;
+                padding: 6px 12px !important;
+            }
+
+            .contact-info li {
+                font-size: 14px;
+            }
+
+            .btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+        /* 确保图标在移动端合适大小 */
+        @media (max-width: 768px) {
+            .solution-image i {
+                font-size: 2.5rem !important;
+            }
+
+            .solution-image h4 {
+                font-size: 20px !important;
+            }
+
+            .solution-image p {
+                font-size: 14px !important;
+            }
+        }
+
+        /* 导航栏响应式 */
+        @media (max-width: 768px) {
+            .header-wrapper {
+                padding: 10px 15px;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: block;
+            }
+
+            .nav-menu li {
+                display: block;
+                margin: 0;
+                padding: 10px 15px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-buttons {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+        }
     </style>
 </head>
 
@@ -235,7 +433,7 @@
             <div class="header-wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="images/logo.jpg" alt="营养管理" id="logo-img">
+                        <img src="images/logo3.png" alt="营养管理" id="logo-img">
                         <span>临床营养管理系统</span>
                     </a>
                 </div>
@@ -353,7 +551,27 @@
                     </div>
 
                     <div class="solution-image">
-                        <img src="images/inpatient-solution.jpg" alt="住院患者营养管理解决方案">
+                        <!-- <img src="images/inpatient-solution.jpg" alt="住院患者营养管理解决方案"> -->
+                        <div
+                            style="height: 400px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 10px; padding: 30px; text-align: center;">
+                            <div style="margin-bottom: 25px;">
+                                <i class="bi bi-hospital" style="font-size: 3.5rem; color: #4e73df;"></i>
+                            </div>
+                            <h4 style="color: #4e73df; margin-bottom: 20px;">住院营养管理</h4>
+                            <p style="color: #6c757d; line-height: 1.8;">
+                                提供全面的住院患者营养管理解决方案<br>
+                                从入院筛查到出院随访<br>
+                                实现全程化、标准化、智能化管理
+                            </p>
+                            <div style="margin-top: 30px;">
+                                <span class="badge"
+                                    style="background: #4e73df22; color: #4e73df; padding: 8px 15px; margin: 5px; border-radius: 20px;">营养筛查</span>
+                                <span class="badge"
+                                    style="background: #4e73df22; color: #4e73df; padding: 8px 15px; margin: 5px; border-radius: 20px;">营养评估</span>
+                                <span class="badge"
+                                    style="background: #4e73df22; color: #4e73df; padding: 8px 15px; margin: 5px; border-radius: 20px;">营养干预</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -366,11 +584,7 @@
                     <p class="solution-subtitle">提升营养门诊工作效率，实现患者营养干预全程追踪，提高随访和干预依从性</p>
                 </div>
 
-                <div class="solution-content reverse">
-                    <div class="solution-image">
-                        <img src="images/outpatient-solution.jpg" alt="门诊营养咨询管理解决方案">
-                    </div>
-
+                <div class="solution-content">
                     <div class="solution-info">
                         <p class="solution-description">
                             门诊营养咨询管理解决方案专为医院营养门诊设计，提供营养咨询全流程管理，从预约挂号、营养评估、饮食分析、干预方案制定到长期随访管理，全面提升营养门诊服务效率和质量。
@@ -435,6 +649,29 @@
                                     <h4>电子营养处方</h4>
                                     <p>标准化电子营养处方生成，支持打印和电子推送功能</p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-image">
+                        <div
+                            style="height: 400px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 10px; padding: 30px; text-align: center;">
+                            <div style="margin-bottom: 25px;">
+                                <i class="bi bi-person-lines-fill" style="font-size: 3.5rem; color: #4e73df;"></i>
+                            </div>
+                            <h4 style="color: #4e73df; margin-bottom: 20px;">门诊营养咨询</h4>
+                            <p style="color: #6c757d; line-height: 1.8;">
+                                专业的门诊营养咨询管理方案<br>
+                                提供个性化营养指导服务<br>
+                                助力慢病防治和健康管理
+                            </p>
+                            <div style="margin-top: 30px;">
+                                <span class="badge"
+                                    style="background: #4e73df22; color: #4e73df; padding: 8px 15px; margin: 5px; border-radius: 20px;">营养评估</span>
+                                <span class="badge"
+                                    style="background: #4e73df22; color: #4e73df; padding: 8px 15px; margin: 5px; border-radius: 20px;">膳食指导</span>
+                                <span class="badge"
+                                    style="background: #4e73df22; color: #4e73df; padding: 8px 15px; margin: 5px; border-radius: 20px;">随访管理</span>
                             </div>
                         </div>
                     </div>
@@ -519,7 +756,27 @@
                     </div>
 
                     <div class="solution-image">
-                        <img src="images/dietary-solution.jpg" alt="医院膳食管理解决方案">
+                        <!-- <img src="images/dietary-solution.jpg" alt="医院膳食管理解决方案"> -->
+                        <div
+                            style="height: 400px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 10px; padding: 30px; text-align: center;">
+                            <div style="margin-bottom: 25px;">
+                                <i class="bi bi-cup-hot" style="font-size: 3.5rem; color: #4e73df;"></i>
+                            </div>
+                            <h4 style="color: #4e73df; margin-bottom: 20px;">医院膳食管理</h4>
+                            <p style="color: #6c757d; line-height: 1.8;">
+                                智能化膳食管理解决方案<br>
+                                优化供应链流程<br>
+                                确保营养均衡与食品安全
+                            </p>
+                            <div style="margin-top: 30px;">
+                                <span class="badge"
+                                    style="background: #4e73df22; color: #4e73df; padding: 8px 15px; margin: 5px; border-radius: 20px;">食谱管理</span>
+                                <span class="badge"
+                                    style="background: #4e73df22; color: #4e73df; padding: 8px 15px; margin: 5px; border-radius: 20px;">成本控制</span>
+                                <span class="badge"
+                                    style="background: #4e73df22; color: #4e73df; padding: 8px 15px; margin: 5px; border-radius: 20px;">质量监控</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -730,6 +987,36 @@
             );
         });
     </script>
+    <script>
+        // 移动端菜单切换
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            mobileToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+                mobileToggle.classList.toggle('active');
+            });
+
+            // 点击菜单项后自动关闭菜单
+            document.querySelectorAll('.nav-menu a').forEach(item => {
+                item.addEventListener('click', function () {
+                    navMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                });
+            });
+
+            // 点击页面其他区域关闭菜单
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.header-wrapper')) {
+                    navMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
+
+</html>
 
 </html>
