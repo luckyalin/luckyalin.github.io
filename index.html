@@ -200,68 +200,72 @@
 
         /* Banner样式 */
         .hero-banner {
-            padding: 180px 0 100px;
+            padding: clamp(120px, 15vh, 150px) 0 clamp(60px, 10vh, 80px);
             background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
-        .hero-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('images/pattern.png') repeat;
-            opacity: 0.1;
+        .hero-wrapper {
+            position: relative;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 200px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        .hero-logo {
+            flex: 0 0 auto;
+            margin-left: auto;
+        }
+
+        .floating-logo {
+            width: 450px;
+            height: auto;
+            opacity: 0.15;
+            filter: brightness(2);
+            transition: all 0.3s ease;
+            animation: float 6s ease-in-out infinite;
         }
 
         .hero-content {
+            flex: 0 0 auto;
+            text-align: left;
+            max-width: 600px;
+            padding: 0;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .hero-title {
+            font-size: clamp(2.8rem, 6vw, 4rem);
             color: #ffffff;
+            margin-bottom: clamp(35px, 6vh, 50px);
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            line-height: 1.2;
-        }
-
-        .hero-content h2 {
-            font-size: 1.8rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 35px;
+            line-height: 1.4;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInDown 1s ease-out;
+            text-align: left;
         }
 
         .hero-buttons {
-            margin-top: 30px;
+            text-align: left;
         }
 
-        .btn-secondary {
-            background-color: #1cc88a;
-            padding: 15px 35px;
-            font-size: 1.1rem;
+        .hero-buttons .btn-secondary {
+            padding: clamp(12px, 2vw, 16px) clamp(30px, 4vw, 40px);
+            font-size: clamp(1.1rem, 1.8vw, 1.3rem);
             border-radius: 30px;
             box-shadow: 0 4px 15px rgba(28, 200, 138, 0.3);
             transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background-color: #17a673;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(28, 200, 138, 0.4);
         }
 
         .hero-image {
@@ -279,33 +283,115 @@
 
         @keyframes float {
             0% {
-                transform: translateY(0px);
+                transform: translateX(0);
             }
 
             50% {
-                transform: translateY(-20px);
+                transform: translateX(-20px);
             }
 
             100% {
-                transform: translateY(0px);
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 1600px) {
+            .hero-wrapper {
+                max-width: 1400px;
+                gap: 150px;
+            }
+
+            .floating-logo {
+                width: 400px;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .hero-wrapper {
+                max-width: 1200px;
+                gap: 100px;
+            }
+
+            .floating-logo {
+                width: 350px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-wrapper {
+                gap: 50px;
+                padding: 0 30px;
+            }
+
+            .floating-logo {
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .floating-logo {
+                width: 250px;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-banner {
-                padding: 120px 0 60px;
+            .hero-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
             }
 
-            .hero-content h1 {
-                font-size: 2.2rem;
+            .hero-content {
+                margin-bottom: 0;
             }
 
-            .hero-content h2 {
-                font-size: 1.4rem;
+            .hero-logo {
+                align-self: flex-end;
             }
 
-            .hero-content p {
-                font-size: 1.1rem;
+            .floating-logo {
+                width: 200px;
+                opacity: 0.1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-logo {
+                display: none;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes backgroundMove {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 100% 100%;
             }
         }
 
@@ -394,10 +480,6 @@
         .solution-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .solution-item:nth-child(even) {
-            flex-direction: row-reverse;
         }
 
         .solution-image {
@@ -596,79 +678,95 @@
 
         /* 页脚样式 */
         .footer {
-            background-color: var(--dark-color);
-            color: white;
+            background: linear-gradient(to bottom, #2e384d, #1a223c);
             padding: 50px 0 20px;
         }
 
         .footer-top {
             display: grid;
             grid-template-columns: 1.8fr repeat(3, 1fr);
-            gap: 40px;
+            gap: 30px;
             margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: none;
+            padding: 0 20px;
+        }
+
+        .footer-info {
+            text-align: center;
+            padding: 0;
         }
 
         .footer-logo {
-            display: flex;
-            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
         }
 
         .footer-logo span {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .footer-info {
-            padding-right: 20px;
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .footer-info p {
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 25px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .contact-details {
-            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin: 15px 0;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            color: rgba(255, 255, 255, 0.8);
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
         .contact-item i {
-            margin-right: 10px;
-            font-size: 1.1rem;
-            color: var(--primary-color);
+            font-size: 1rem;
+            color: var(--secondary-color);
         }
 
-        .social-links {
-            margin-top: 25px;
-        }
-
-        .social-links a {
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
+        .contact-item span {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .link-group {
-            padding: 0 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .link-group:hover {
+            background: rgba(255, 255, 255, 0.03);
+            transform: translateY(-3px);
         }
 
         .link-group h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
             position: relative;
-            padding-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .link-group h4::after {
@@ -676,76 +774,121 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 30px;
+            width: 25px;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--secondary-color);
+        }
+
+        .link-group ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
 
         .link-group ul li {
-            margin-bottom: 12px;
+            margin: 0;
         }
 
         .link-group ul li a {
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
             transition: all 0.3s;
-            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .link-group ul li a:before {
+            content: '•';
+            color: var(--secondary-color);
         }
 
         .link-group ul li a:hover {
-            color: white;
-            padding-left: 5px;
+            color: var(--secondary-color);
+            padding-left: 3px;
         }
 
         .footer-bottom {
-            padding-top: 25px;
-            border-top: none;
+            margin-top: 30px;
+            padding: 20px 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .copyright {
+            margin-bottom: 15px;
         }
 
         .copyright p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .copyright a {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.3s ease;
+        }
+
+        .copyright a:hover {
+            color: var(--secondary-color);
         }
 
         .footer-nav {
-            gap: 30px;
-            border-top: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
         .footer-nav a {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 6px 12px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--secondary-color);
         }
 
         /* 响应式调整 */
         @media (max-width: 1024px) {
             .footer-top {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
+                gap: 25px;
             }
         }
 
         @media (max-width: 768px) {
             .footer-top {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 25px 0 15px;
             }
 
-            .footer-info {
-                padding-right: 0;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
+            .footer-top {
                 gap: 15px;
+                padding: 0 10px;
             }
 
-            .footer-nav {
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 15px;
+            .link-group {
+                padding: 15px;
+            }
+
+            .contact-item {
+                padding: 6px 15px;
+            }
+
+            .footer-nav a {
+                padding: 4px 10px;
+                font-size: 0.8rem;
             }
         }
 
@@ -933,6 +1076,905 @@
                 text-align: center;
             }
         }
+
+        /* 在 <style> 标签中添加或更新以下样式 */
+        @media (max-width: 768px) {
+
+            /* 导航栏样式优化 */
+            .header {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+                background: white;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .header-wrapper {
+                padding: 8px 15px;
+                /* 减小padding使导航栏更紧凑 */
+            }
+
+            .logo img {
+                height: 30px;
+                /* 调整logo大小 */
+            }
+
+            .logo span {
+                font-size: 14px;
+                /* 减小logo文字大小 */
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: block;
+            }
+
+            .nav-menu li {
+                display: block;
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-menu li a {
+                padding: 12px 15px;
+                /* 调整菜单项padding */
+                display: block;
+                font-size: 14px;
+                /* 减小菜单文字大小 */
+            }
+
+            .nav-buttons {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 22px;
+                /* 减小汉堡菜单按钮大小 */
+                height: 16px;
+                /* 减小汉堡菜单按钮大小 */
+                cursor: pointer;
+            }
+
+            .mobile-toggle span {
+                display: block;
+                width: 100%;
+                height: 2px;
+                background: var(--text-dark);
+                transition: all 0.3s;
+            }
+
+            /* 为了适应固定导航栏，给主内容添加上边距 */
+            .main-content {
+                padding-top: 60px;
+                /* 根据导航栏高度调整 */
+            }
+
+            /* 优化展开后的菜单样式 */
+            .nav-menu li:hover {
+                background: #f8f9fa;
+            }
+
+            .nav-menu li.active {
+                background: #f0f2f5;
+            }
+
+            .nav-menu li.active a {
+                color: var(--primary-color);
+            }
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .header-wrapper {
+                padding: 6px 12px;
+                /* 更小屏幕下进一步减小padding */
+            }
+
+            .logo img {
+                height: 25px;
+                /* 更小屏幕下进一步减小logo */
+            }
+
+            .logo span {
+                font-size: 13px;
+                /* 更小屏幕下进一步减小文字 */
+            }
+        }
+
+        /* 修改 hero-banner 和相关组件的移动端样式 */
+        @media (max-width: 768px) {
+
+            /* 调整 hero-banner 在移动端的内边距，确保不被页眉遮挡 */
+            .hero-banner {
+                padding: clamp(100px, 15vh, 120px) 0 clamp(40px, 8vh, 60px);
+                min-height: 300px;
+            }
+
+            /* 调整 hero-wrapper 在移动端的布局 */
+            .hero-wrapper {
+                min-height: 200px;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                padding: 0 20px;
+            }
+
+            /* 调整内容区域在移动端的样式 */
+            .hero-content {
+                width: 100%;
+                max-width: 100%;
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            /* 调整标题在移动端的大小和样式 */
+            .hero-title {
+                font-size: clamp(2.2rem, 5vw, 2.8rem);
+                margin-bottom: clamp(30px, 5vh, 40px);
+                text-align: center;
+                line-height: 1.3;
+            }
+
+            /* 调整按钮在移动端的样式 */
+            .hero-buttons {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .hero-buttons .btn-secondary {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+                border-radius: 25px;
+                min-width: 180px;
+            }
+
+            /* 隐藏 logo */
+            .hero-logo {
+                display: none;
+            }
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .hero-banner {
+                padding: clamp(90px, 12vh, 100px) 0 clamp(35px, 6vh, 45px);
+                min-height: 250px;
+            }
+
+            .hero-wrapper {
+                padding: 0 15px;
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 4.5vw, 2.2rem);
+                margin-bottom: 25px;
+            }
+
+            .hero-buttons .btn-secondary {
+                width: auto;
+                min-width: 160px;
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        /* 确保内容不被页眉遮挡的额外调整 */
+        @media (max-width: 768px) {
+            .hero-banner {
+                margin-top: 0;
+                position: relative;
+                z-index: 1;
+            }
+
+            .hero-content {
+                margin-top: 10px;
+            }
+
+            /* 调整按钮大小和间距 */
+            .hero-buttons .btn-secondary {
+                margin-top: 5px;
+                box-shadow: 0 3px 10px rgba(28, 200, 138, 0.2);
+            }
+        }
+
+        /* 修改系统特点部分的移动端样式 */
+        @media (max-width: 768px) {
+            .features-section {
+                padding: 40px 0;
+            }
+
+            .section-header {
+                margin-bottom: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+
+            .section-header p {
+                font-size: 0.95rem;
+                margin-bottom: 0;
+            }
+
+            .features-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* 修改为两列 */
+                gap: 15px;
+                /* 减小间距 */
+                padding: 0 10px;
+            }
+
+            .feature-card {
+                padding: 15px;
+                min-height: 200px;
+                /* 确保卡片高度一致 */
+                display: flex;
+                flex-direction: column;
+            }
+
+            .feature-icon {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+
+            .feature-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+
+            .feature-card p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+                margin-bottom: 0;
+            }
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .features-section {
+                padding: 30px 0;
+            }
+
+            .section-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .features-grid {
+                gap: 10px;
+                padding: 0 5px;
+            }
+
+            .feature-card {
+                padding: 12px;
+                min-height: 180px;
+            }
+
+            .feature-icon {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+
+            .feature-card h3 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .feature-card p {
+                font-size: 0.8rem;
+                line-height: 1.3;
+            }
+        }
+
+        /* 修改解决方案部分的移动端样式 */
+        @media (max-width: 768px) {
+            .solutions-section {
+                padding: 40px 0;
+            }
+
+            .section-header {
+                margin-bottom: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+
+            .section-header p {
+                font-size: 0.95rem;
+                margin-bottom: 0;
+            }
+
+            .solutions-wrapper {
+                gap: 20px;
+            }
+
+            .solution-item {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .solution-content {
+                padding: 0;
+            }
+
+            .solution-content h3 {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+
+            .solution-features {
+                margin: 15px 0;
+            }
+
+            .solution-features li {
+                margin-bottom: 8px;
+                font-size: 0.95rem;
+            }
+
+            /* 隐藏图片部分 */
+            .solution-image {
+                display: none;
+            }
+
+            /* 调整按钮样式 */
+            .solution-content .btn-outline {
+                width: 100%;
+                text-align: center;
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .solutions-section {
+                padding: 30px 0;
+            }
+
+            .section-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .solution-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .solution-features li {
+                font-size: 0.9rem;
+            }
+
+            .solution-content .btn-outline {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* 修改成功案例部分的移动端样式 */
+        @media (max-width: 768px) {
+            .cases-section {
+                padding: 40px 0;
+            }
+
+            .section-header {
+                margin-bottom: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+
+            .section-header p {
+                font-size: 0.95rem;
+                margin-bottom: 0;
+            }
+
+            .cases-grid {
+                display: flex;
+                overflow-x: auto;
+                gap: 15px;
+                padding: 10px 5px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .case-card {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+                min-width: 280px;
+                margin-bottom: 5px;
+            }
+
+            .case-image {
+                height: 150px;
+            }
+
+            .case-image>div {
+                height: 150px !important;
+                padding: 20px !important;
+            }
+
+            .case-image i {
+                font-size: 2rem !important;
+                margin-bottom: 10px !important;
+            }
+
+            .case-content {
+                padding: 15px;
+            }
+
+            .case-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+            }
+
+            .case-content p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                margin-bottom: 0;
+            }
+
+            /* 添加滚动条样式 */
+            .cases-grid::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .cases-grid::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 2px;
+            }
+
+            .cases-grid::-webkit-scrollbar-thumb {
+                background: var(--primary-color);
+                border-radius: 2px;
+            }
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .cases-section {
+                padding: 30px 0;
+            }
+
+            .case-card {
+                flex: 0 0 90%;
+                min-width: 260px;
+            }
+
+            .case-image {
+                height: 130px;
+            }
+
+            .case-image>div {
+                height: 130px !important;
+                padding: 15px !important;
+            }
+
+            .case-content {
+                padding: 12px;
+            }
+
+            .case-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .case-content p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* 修改数据统计部分的移动端样式 */
+        @media (max-width: 768px) {
+            .stats-section {
+                padding: 40px 0;
+            }
+
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                padding: 0 10px;
+            }
+
+            .stat-card {
+                padding: 20px 15px;
+                min-height: auto;
+            }
+
+            .stat-icon {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            .stat-card h3 {
+                font-size: 1.8rem;
+                margin-bottom: 5px;
+            }
+
+            .stat-card p {
+                font-size: 0.9rem;
+                margin-bottom: 0;
+            }
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .stats-section {
+                padding: 30px 0;
+            }
+
+            .stats-grid {
+                gap: 10px;
+                padding: 0 5px;
+            }
+
+            .stat-card {
+                padding: 15px 10px;
+            }
+
+            .stat-icon {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+
+            .stat-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 4px;
+            }
+
+            .stat-card p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* 修改关于我们部分的移动端样式 */
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 40px 0;
+            }
+
+            .section-header {
+                margin-bottom: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+
+            .section-header p {
+                font-size: 0.95rem;
+                margin-bottom: 0;
+            }
+
+            .about-content {
+                padding: 0 10px;
+            }
+
+            .about-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+
+            .about-card {
+                padding: 20px 15px;
+                min-height: auto;
+                background: linear-gradient(145deg, #ffffff, #f5f7fc);
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+                border: 1px solid rgba(78, 115, 223, 0.1);
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .about-icon {
+                font-size: 1.6rem;
+                margin-bottom: 12px;
+                background: rgba(78, 115, 223, 0.1);
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+            }
+
+            .about-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+                color: var(--primary-color);
+            }
+
+            .about-card p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                color: var(--gray-color);
+                margin-bottom: 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .about-card.expanded p {
+                -webkit-line-clamp: unset;
+            }
+
+            .read-more {
+                color: var(--primary-color);
+                font-size: 0.8rem;
+                margin-top: 8px;
+                text-align: right;
+                cursor: pointer;
+                font-weight: 500;
+            }
+
+            .company-values {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .value-item {
+                padding: 15px 12px;
+                background: linear-gradient(145deg, #ffffff, #f5f7fc);
+                box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.05);
+                border: 1px solid rgba(78, 115, 223, 0.1);
+                border-radius: 12px;
+            }
+
+            /* 特别处理第三个卡片（服务至上） */
+            .value-item:nth-child(3) {
+                grid-column: 1 / -1;
+                /* 跨越两列 */
+                width: 80%;
+                /* 控制宽度 */
+                margin: -30px auto 0;
+                /* 上移并水平居中 */
+                transform: translateY(20px);
+                /* 微调位置 */
+            }
+
+            .value-item i {
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+                color: var(--primary-color);
+                background: rgba(78, 115, 223, 0.1);
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                margin: 0 auto 8px;
+            }
+
+            .value-item h4 {
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+                color: var(--primary-color);
+            }
+
+            .value-item p {
+                font-size: 0.8rem;
+                line-height: 1.4;
+                color: var(--gray-color);
+                margin-bottom: 0;
+            }
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .about-section {
+                padding: 30px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .about-card {
+                padding: 15px;
+            }
+
+            .about-icon {
+                font-size: 1.4rem;
+                width: 35px;
+                height: 35px;
+            }
+
+            .about-card h3 {
+                font-size: 1rem;
+            }
+
+            .about-card p {
+                font-size: 0.8rem;
+                line-height: 1.4;
+                -webkit-line-clamp: 4;
+            }
+
+            .company-values {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .value-item {
+                padding: 12px 10px;
+            }
+
+            .value-item i {
+                font-size: 1.3rem;
+                width: 32px;
+                height: 32px;
+            }
+
+            .value-item h4 {
+                font-size: 0.85rem;
+            }
+
+            .value-item p {
+                font-size: 0.75rem;
+            }
+
+            .value-item:nth-child(3) {
+                width: 90%;
+                /* 在更小屏幕上略微增加宽度 */
+                margin: -20px auto 0;
+                /* 调整间距 */
+            }
+        }
+
+        /* 修改联系我们部分的移动端样式 */
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 40px 0;
+            }
+
+            .contact-wrapper {
+                gap: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            .contact-content {
+                padding: 25px 20px;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .contact-content h2 {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+
+            .contact-content p {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+                opacity: 0.9;
+            }
+
+            .contact-info {
+                margin-top: 20px;
+            }
+
+            .contact-info li {
+                margin-bottom: 10px;
+                font-size: 0.9rem;
+            }
+
+            .contact-info li i {
+                margin-right: 10px;
+                font-size: 1rem;
+            }
+
+            .contact-form {
+                padding: 20px;
+                background: #fff;
+                border-radius: 0 0 10px 10px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+                border: 1px solid rgba(78, 115, 223, 0.1);
+                border-radius: 6px;
+                background-color: rgba(78, 115, 223, 0.02);
+            }
+
+            .form-group input::placeholder,
+            .form-group textarea::placeholder {
+                color: #999;
+                font-size: 0.85rem;
+            }
+
+            .form-group textarea {
+                height: 80px;
+            }
+
+            .btn-primary.btn-block {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+                border-radius: 6px;
+                background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+                box-shadow: 0 3px 10px rgba(78, 115, 223, 0.2);
+            }
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 30px 0;
+            }
+
+            .contact-content {
+                padding: 20px 15px;
+            }
+
+            .contact-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .contact-content p {
+                font-size: 0.85rem;
+            }
+
+            .contact-info li {
+                font-size: 0.85rem;
+            }
+
+            .contact-form {
+                padding: 15px;
+            }
+
+            .form-group {
+                margin-bottom: 12px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+
+            .form-group input::placeholder,
+            .form-group textarea::placeholder {
+                font-size: 0.8rem;
+            }
+
+            .form-group textarea {
+                height: 70px;
+            }
+
+            .btn-primary.btn-block {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 
@@ -971,19 +2013,15 @@
     <!-- 主横幅 -->
     <section id="home" class="hero-banner">
         <div class="container">
-            <div class="row" style="display: flex; align-items: center; justify-content: center;">
-                <div class="col-md-8" style="text-align: center;">
-                    <div class="hero-content">
-                        <h1>智能临床营养管理系统</h1>
-                        <h2>提升医院营养管理的专业智能解决方案</h2>
-                        <p style="max-width: 800px; margin: 0 auto 35px;">
-                            整合营养评估、膳食干预、监测随访的全流程管理<br>
-                            为患者提供科学、精准的个性化营养服务
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-secondary">咨询方案</a>
-                        </div>
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <h1 class="hero-title">智能临床营养管理系统</h1>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-secondary">咨询方案</a>
                     </div>
+                </div>
+                <div class="hero-logo">
+                    <img src="images/logo3.png" alt="营养管理" class="floating-logo">
                 </div>
             </div>
         </div>
@@ -1106,7 +2144,7 @@
                     </div>
                 </div>
 
-                <div class="solution-item reverse">
+                <div class="solution-item">
                     <div class="solution-content">
                         <h3>门诊营养咨询管理</h3>
                         <ul class="solution-features">
@@ -1120,7 +2158,6 @@
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                     <div class="solution-image">
-                        <!-- <img src="images/outpatient-solution.jpg" alt="门诊营养咨询管理"> -->
                         <div
                             style="padding: 40px; background: rgba(78, 115, 223, 0.05); border-radius: 10px; height: 100%; display: flex; flex-direction: column; justify-content: center;">
                             <div style="margin-bottom: 25px;">
@@ -1294,6 +2331,7 @@
                         <h3>公司简介</h3>
                         <p>天津医久科技有限公司是一家专注于医疗信息化领域的高新技术企业，致力于为医疗机构提供专业的临床营养管理解决方案。公司汇集了一批在医疗信息化、临床营养学、软件开发等领域的专业人才，以技术创新为驱动，为医疗机构提供全方位的营养管理信息化服务。
                         </p>
+                        <div class="read-more">阅读更多</div>
                     </div>
 
                     <div class="about-card">
@@ -1302,6 +2340,7 @@
                         </div>
                         <h3>发展使命</h3>
                         <p>通过信息化手段推动医疗机构营养管理水平的提升，为患者提供更专业、更精准的营养医疗服务。我们始终坚持"以客户为中心，以创新为动力"的发展理念，持续优化产品与服务。</p>
+                        <div class="read-more">阅读更多</div>
                     </div>
                 </div>
 
@@ -1612,7 +2651,57 @@
                 }
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const header = document.querySelector('.header');
+
+            // 添加滚动监听，优化导航栏显示
+            let lastScroll = 0;
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll <= 0) {
+                    header.classList.remove('scroll-up');
+                    return;
+                }
+
+                if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+                    // 向下滚动
+                    header.classList.remove('scroll-up');
+                    header.classList.add('scroll-down');
+                    // 关闭菜单
+                    navMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+                    // 向上滚动
+                    header.classList.remove('scroll-down');
+                    header.classList.add('scroll-up');
+                }
+                lastScroll = currentScroll;
+            });
+
+            // 点击菜单外区域自动关闭
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.header-wrapper')) {
+                    navMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                }
+            });
+        });
+
+        // 在现有的 DOMContentLoaded 事件监听器中添加以下代码
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', function () {
+                const card = this.closest('.about-card');
+                card.classList.toggle('expanded');
+                this.textContent = card.classList.contains('expanded') ? '收起' : '阅读更多';
+            });
+        });
     </script>
 </body>
+
+</html>
 
 </html>
