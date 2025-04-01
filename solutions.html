@@ -15,8 +15,10 @@
         .page-banner {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
             color: var(--white);
-            padding: 60px 0;
+            padding: 120px 0 60px;
             margin-bottom: 50px;
+            margin-top: 56px;
+            /* 添加顶部外边距，与导航栏高度相同 */
         }
 
         .page-title {
@@ -231,103 +233,151 @@
 
             /* 页面横幅 */
             .page-banner {
-                padding: 40px 0;
-                margin-bottom: 30px;
+                padding: 60px 0 20px;
+                margin-bottom: 15px;
+                margin-top: 56px;
             }
 
             .page-title {
-                font-size: 28px;
+                font-size: 22px;
             }
 
             .page-description {
-                font-size: 16px;
-                padding: 0 15px;
+                font-size: 13px;
+                padding: 0 10px;
             }
 
             /* 解决方案部分 */
             .solution-section {
-                padding: 40px 0;
+                padding: 20px 0;
             }
 
             .solution-header {
-                margin-bottom: 30px;
-                padding: 0 15px;
+                margin-bottom: 15px;
+                padding: 0 10px;
             }
 
             .solution-title {
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .solution-subtitle {
-                font-size: 16px;
+                font-size: 13px;
             }
 
             .solution-content {
                 flex-direction: column;
-                padding: 0 15px;
+                padding: 0 10px;
+                gap: 15px;
             }
 
             .solution-info {
                 min-width: 100%;
+                margin-bottom: 10px;
             }
 
             .solution-image {
                 min-width: 100%;
+                height: auto !important;
+                margin-bottom: 10px;
+            }
+
+            .solution-image div {
+                height: auto !important;
+                padding: 8px !important;
+                min-height: 140px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .solution-image div i {
+                font-size: 2rem !important;
+                margin-bottom: 8px !important;
+            }
+
+            .solution-image div h4 {
+                font-size: 16px !important;
+                margin-bottom: 5px !important;
+            }
+
+            .solution-image div p {
+                font-size: 12px !important;
+                line-height: 1.3;
+                margin-bottom: 8px !important;
+            }
+
+            .solution-image div .badge {
+                font-size: 10px !important;
+                padding: 2px 6px !important;
+                margin: 1px !important;
             }
 
             .solution-description {
-                font-size: 15px;
+                font-size: 13px;
+                margin-bottom: 10px;
+                line-height: 1.4;
             }
 
             .feature-item {
-                margin-bottom: 20px;
+                margin-bottom: 8px;
             }
 
             .feature-info h4 {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             .feature-info p {
-                font-size: 14px;
+                font-size: 12px;
+                line-height: 1.3;
             }
 
             /* 联系表单部分 */
             .contact-section {
-                padding: 40px 0;
+                padding: 20px 0;
             }
 
             .contact-wrapper {
                 flex-direction: column;
-                gap: 30px;
+                gap: 15px;
+                padding: 0 10px;
             }
 
             .contact-content {
                 text-align: center;
-                padding: 0 15px;
             }
 
             .contact-content h2 {
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .contact-content p {
-                font-size: 16px;
+                font-size: 13px;
             }
 
             .contact-form {
                 width: 100%;
-                padding: 0 15px;
             }
 
             .form-group {
-                margin-bottom: 15px;
+                margin-bottom: 8px;
+            }
+
+            /* 预约演示按钮样式 */
+            .btn-primary.btn-block {
+                font-size: 14px;
+                padding: 8px 20px;
+                border-radius: 5px;
+                width: 100%;
+                margin-top: 10px;
             }
 
             /* 页脚部分 */
             .footer-top {
                 flex-direction: column;
-                gap: 30px;
-                padding: 40px 15px;
+                gap: 15px;
+                padding: 20px 10px;
             }
 
             .footer-info {
@@ -342,8 +392,8 @@
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
-                gap: 15px;
-                padding: 20px 15px;
+                gap: 8px;
+                padding: 10px 10px;
             }
 
             .footer-nav {
@@ -354,73 +404,525 @@
         /* 针对更小屏幕的优化 */
         @media (max-width: 480px) {
             .solution-image div {
-                height: 300px !important;
-                padding: 20px !important;
+                min-height: 120px !important;
+                padding: 6px !important;
             }
 
-            .badge {
-                font-size: 12px !important;
-                padding: 6px 12px !important;
+            .solution-image div i {
+                font-size: 1.8rem !important;
+                margin-bottom: 6px !important;
+            }
+
+            .solution-image div h4 {
+                font-size: 15px !important;
+                margin-bottom: 4px !important;
+            }
+
+            .solution-image div p {
+                font-size: 11px !important;
+                margin-bottom: 6px !important;
+            }
+
+            .solution-image div .badge {
+                font-size: 9px !important;
+                padding: 1px 4px !important;
+                margin: 0.5px !important;
             }
 
             .contact-info li {
-                font-size: 14px;
+                font-size: 12px;
             }
 
             .btn {
                 width: 100%;
-                margin: 5px 0;
+                margin: 2px 0;
+            }
+
+            /* 小屏幕下的预约演示按钮样式 */
+            .btn-primary.btn-block {
+                font-size: 13px;
+                padding: 7px 18px;
             }
         }
 
         /* 确保图标在移动端合适大小 */
         @media (max-width: 768px) {
             .solution-image i {
-                font-size: 2.5rem !important;
+                font-size: 1.8rem !important;
             }
 
             .solution-image h4 {
-                font-size: 20px !important;
+                font-size: 16px !important;
             }
 
             .solution-image p {
-                font-size: 14px !important;
+                font-size: 12px !important;
+                line-height: 1.4;
             }
         }
 
-        /* 导航栏响应式 */
+        /* 导航栏样式 */
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .nav-menu li:last-child {
+            margin-left: auto;
+        }
+
+        .nav-menu li:last-child a {
+            padding: 8px 20px;
+            border-radius: 5px;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .nav-menu li:last-child a:hover {
+            background-color: #3a5bc7;
+            color: white;
+        }
+
+        /* 移除原有的nav-buttons */
+        .nav-buttons {
+            display: none;
+        }
+
+        /* 响应式调整 */
         @media (max-width: 768px) {
+
+            /* 导航栏样式优化 */
+            .header {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            }
+
             .header-wrapper {
-                padding: 10px 15px;
+                width: 100%;
+                padding: 12px 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
 
             .nav-menu {
                 display: none;
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 56px;
                 left: 0;
                 width: 100%;
+                height: calc(100vh - 56px);
                 background: white;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                padding: 16px;
+                margin: 0;
+                list-style: none;
+                transform: translateY(-10px);
+                opacity: 0;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                border-radius: 0;
+                overflow-y: auto;
             }
 
             .nav-menu.active {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                transform: translateY(0);
+                opacity: 1;
             }
 
-            .nav-menu li {
-                display: block;
+            /* 所有菜单项统一样式 */
+            .nav-menu>li {
+                width: 100%;
                 margin: 0;
-                padding: 10px 15px;
-                border-bottom: 1px solid #eee;
+                text-align: center;
             }
 
-            .nav-buttons {
-                display: none;
+            .nav-menu>li a {
+                display: block;
+                width: 100%;
+                padding: 12px;
+                font-size: 14px;
+                color: #333;
+                text-decoration: none;
+                border-radius: 12px;
+                transition: all 0.3s ease;
+                background: #f8f9fa;
+                border: 1px solid rgba(78, 115, 223, 0.1);
+            }
+
+            .nav-menu>li a:hover,
+            .nav-menu>li a.active {
+                background-color: rgba(78, 115, 223, 0.1);
+                color: var(--primary-color);
+                border-color: rgba(78, 115, 223, 0.2);
+                transform: translateY(-2px);
+            }
+
+            /* 联系我们按钮样式 */
+            .nav-menu>li:last-child {
+                margin-top: 0;
+                padding: 0;
+            }
+
+            .nav-menu>li:last-child a {
+                background: #f8f9fa;
+                color: #333;
+                border: 1px solid rgba(78, 115, 223, 0.1);
+                font-weight: normal;
+                box-shadow: none;
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .nav-menu>li:last-child a:hover {
+                background-color: rgba(78, 115, 223, 0.1);
+                color: var(--primary-color);
+                border-color: rgba(78, 115, 223, 0.2);
             }
 
             .mobile-toggle {
                 display: block;
+                cursor: pointer;
+                padding: 5px;
+            }
+
+            .mobile-toggle span {
+                display: block;
+                width: 25px;
+                height: 2px;
+                background-color: #333;
+                margin: 5px 0;
+                transition: all 0.3s;
+            }
+
+            .mobile-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: linear-gradient(to bottom, #2e384d, #1a223c);
+            padding: 50px 0 20px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.8fr repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .footer-info {
+            text-align: center;
+            padding: 0;
+        }
+
+        .footer-logo {
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-info p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .contact-item i {
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-item span {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .link-group {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .link-group:hover {
+            background: rgba(255, 255, 255, 0.03);
+            transform: translateY(-3px);
+        }
+
+        .link-group h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .link-group h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 25px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .link-group ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .link-group ul li {
+            margin: 0;
+        }
+
+        .link-group ul li a {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .link-group ul li a:before {
+            content: '•';
+            color: var(--secondary-color);
+        }
+
+        .link-group ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 3px;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding: 20px 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .copyright {
+            margin-bottom: 15px;
+        }
+
+        .copyright p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .copyright a {
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.3s ease;
+        }
+
+        .copyright a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer-nav a {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 6px 12px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--secondary-color);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 1024px) {
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 25px 0 15px;
+            }
+
+            .footer-top {
+                gap: 15px;
+                padding: 0 10px;
+            }
+
+            .link-group {
+                padding: 15px;
+            }
+
+            .contact-item {
+                padding: 6px 15px;
+            }
+
+            .footer-nav a {
+                padding: 4px 10px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* 预约演示按钮样式 */
+        .btn-primary.btn-block {
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+            box-shadow: 0 3px 10px rgba(78, 115, 223, 0.2);
+        }
+
+        /* 针对更小屏幕的优化 */
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 30px 0;
+            }
+
+            .contact-content {
+                padding: 20px 15px;
+            }
+
+            .contact-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .contact-content p {
+                font-size: 0.85rem;
+            }
+
+            .contact-info li {
+                font-size: 0.85rem;
+            }
+
+            .contact-form {
+                padding: 15px;
+            }
+
+            .form-group {
+                margin-bottom: 12px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+
+            .form-group input::placeholder,
+            .form-group textarea::placeholder {
+                font-size: 0.8rem;
+            }
+
+            .form-group textarea {
+                height: 70px;
+            }
+
+            .btn-primary.btn-block {
+                padding: 8px 16px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -444,14 +946,10 @@
                         <li><a href="features.html">系统功能</a></li>
                         <li class="active"><a href="solutions.html">解决方案</a></li>
                         <li><a href="index.html#cases">成功案例</a></li>
-                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="index.html#about">关于我们</a></li>
+                        <li><a href="#contact" class="btn btn-primary">联系我们</a></li>
                     </ul>
                 </nav>
-
-                <div class="nav-buttons">
-                    <a href="contact.html" class="btn btn-contact">联系我们</a>
-                    <!-- <a href="login.html" class="btn btn-login">系统登录</a> -->
-                </div>
 
                 <div class="mobile-toggle">
                     <span></span>
@@ -874,11 +1372,7 @@
 
             <div class="footer-bottom">
                 <div class="copyright">
-                    <p>&copy; 2023 天津医久科技有限公司 版权所有 | <a href="icp.html">津ICP备XXXXXXXX号</a></p>
-                </div>
-                <div class="footer-nav">
-                    <a href="privacy.html">隐私政策</a>
-                    <a href="terms.html">使用条款</a>
+                    <p>&copy; 2023 天津医久科技有限公司 版权所有 | 津ICP备XXXXXXXX号</p>
                 </div>
             </div>
         </div>
@@ -1016,7 +1510,5 @@
         });
     </script>
 </body>
-
-</html>
 
 </html>
